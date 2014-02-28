@@ -1,3 +1,9 @@
+#Ruby on Rails App: Uview on rails
+
+This is the first application for the 
+[*Uview*](http://192.168.1.26:3000)
+by [Yinghui Xia](http://yinghuix.sinaapp.com).
+
 == Welcome to Rails
 
 Rails is a web-application framework that includes everything needed to create
