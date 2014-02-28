@@ -1,0 +1,2 @@
+module SitewatchPagesHelper
+end

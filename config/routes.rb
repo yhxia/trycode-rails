@@ -1,5 +1,10 @@
 Uview20140227::Application.routes.draw do
-  get "sitewatch/home"
+  #home_pages
+  root :to => 'home_pages#home'
+  #sitewatch_pages
+  match '/sitewatch', to: 'sitewatch_pages#home', via: 'get'
+  
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
