@@ -1,3 +1,25 @@
 // Place all the styles related to the home_pages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+#home-hotwords{
+  font-size: 14px;
+  margin-top: 16px;
+}
+
+#home-searchbox{
+  margin-top: 24px;
+}
+
+#home-status{
+  margin-top: 32px;
+
+}
+
+#home-status h2{
+  font-size: 22px;
+}
+
+#home-status td{
+  font-size: 16px;
+}
