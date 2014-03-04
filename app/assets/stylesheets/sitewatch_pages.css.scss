@@ -8,7 +8,7 @@
   margin-top: 24px;
 }
 
-/* _header from sitewatch
+/* custom sitewatch-view
 ----------------------------------------------------------- */
 
 #header .header-bot h1 {
@@ -28,4 +28,42 @@
 
 #container{
   width : 99.5%;
+}
+
+#guide_wrap{
+  height: 39px;
+}
+
+#jive-body-intro{
+  margin: 24px;
+}
+
+.jive-alert-title{
+  margin-top: 5px;
+  margin-bottom: 0px;
+}
+
+#jive-body-maincol-container{
+  min-height: 0px;
+}
+
+.jive-thread-messages ul{
+  margin-top: 0px;
+  margin-bottom: -5px;
+}
+
+.jive-thread-messages li.pages{
+  height : 18px !important;
+}
+
+.jive-thread-messages{
+  -moz-border-radius-bottom-left: 4px;
+  -webkit-border-bottom-left-radius: 4px;
+  -moz-border-radius-bottom-right: 4px;
+  -webkit-border-bottom-right-radius: 4px;
+}
+
+.jive-thread-post{
+  text-align: left;
+  font-size: 90%;
 }

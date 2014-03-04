@@ -10207,6 +10207,7 @@ input.remove-selected-btn {
 }
 .jive-alert-content{
 	padding: 10px 0 0 0 !important;
+    text-align: left;
 }
 .jive-rendered-content a.jive-link-email-small{
     display:inline !important;
@@ -12020,6 +12021,7 @@ input.continue_now{
 
 .jive-alert-header .jive-alert-title {
     font-size:12px;
+    font-weight: bold;
 }
 /*
 .jive-attach-text {

@@ -21,3 +21,6 @@ $ ->
 
     alert "success!"
     $('iframe').attr "src", root+searchSrc
+
+
+  $('#viewbutton').popover()
