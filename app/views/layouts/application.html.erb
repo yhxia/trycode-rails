@@ -25,7 +25,7 @@
       <ul class="nav nav-justified">
         <li class = "<%= 'active' if current_page?(root_path) %>"><%= link_to "Home", root_path %></li>
         <li class = "<%= 'active' if current_page?(sitewatch_path) %>"><%= link_to "Sitewatch", sitewatch_path %></li>
-        <li><a href="#">Report</a></li>
+        <li class = "<%= 'active' if current_page?(report_path) %>"><%= link_to "Report", report_path %></li>
         <li><a href="#">Database</a></li>
         <li><a href="#">About</a></li>
         <li><a href="#">Contact</a></li>

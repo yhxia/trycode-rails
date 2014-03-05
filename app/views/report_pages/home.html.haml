@@ -1,0 +1,154 @@
+/report view
+.row#report-view
+  .col-lg-8
+    /highlight
+    .panel.panel-default#highlight-panel
+      .panel-heading#header
+        .header-bot#header-bot
+          .title#title
+            %h1 Highlight View
+          .search#search
+      .panel-body#hightlight-content
+        %table.table.table-hover
+          %thead 
+            %tr 
+              %th #
+              %th View Link
+              %th Radar Link
+              %th Attitude
+              %th Edit
+          %tbody
+            %tr
+              %td 1
+              %td 
+                %a{:href => "http://www.weibo.com/2243807243/Azrlac5Re"} http://www.weibo.com/2243807243/Azrlac5Re
+              %td 
+                %a{:href => "rdar://problem/16144491"} rdar://problem/16144491
+              %td 
+                %span.label.label-success Positive
+              %td
+                %a{:href => "#"} 
+                  %span.glyphicon.glyphicon-pencil
+            %tr
+              %td 2
+              %td 
+                %a{:href => "http://www.weibo.com/2243807243/Azrlac5Re"} http://www.weibo.com/2243807243/Azrlac5Re
+              %td 
+                %a{:href => "rdar://problem/16144491"} rdar://problem/16144491
+              %td 
+                %span.label.label-info Neutral
+              %td
+                %a{:href => "#"} 
+                  %span.glyphicon.glyphicon-pencil
+            %tr
+              %td 3
+              %td 
+                %a{:href => "http://www.weibo.com/2243807243/Azrlac5Re"} http://www.weibo.com/2243807243/Azrlac5Re
+              %td 
+                %a{:href => "rdar://problem/16144491"} rdar://problem/16144491
+              %td 
+                %span.label.label-danger Negative
+              %td
+                %a{:href => "#"} 
+                  %span.glyphicon.glyphicon-pencil
+    /charts
+    .panel.panel-default#charts-panel
+      .panel-heading#header
+        .header-bot#header-bot
+          .title#title
+            %h1 Chart
+          .search#search
+      .panel-body#charts-content
+        %table.table.table-hover
+          %thead 
+            %tr 
+              %th Target
+              %th{:style=>"width:80%"} Attitude Bar
+              %th Total
+          %tbody
+            %tr 
+              %td iOS7
+              %td 
+                .progress{:style=>"width:50%"}
+                  .progress-bar.progress-bar-success{:style=>"width:35%"}
+                    %p 35%
+                  .progress-bar.progress-bar-info{:style=>"width:20%"}
+                    %p 20% 
+                  .progress-bar.progress-bar-danger{:style=>"width:45%"}
+                    %p 45%
+              %td 1242
+            %tr 
+              %td iPhone6
+              %td 
+                .progress{:style=>"width:100%"}
+                  .progress-bar.progress-bar-success{:style=>"width:23%"}
+                    %p 23%
+                  .progress-bar.progress-bar-info{:style=>"width:64%"}
+                    %p 64% 
+                  .progress-bar.progress-bar-danger{:style=>"width:13%"}
+                    %p 13%
+              %td 2723
+    /keyword
+    .panel.panel-default#keyword-panel
+      .panel-heading#header
+        .header-bot#header-bot
+          .title#title
+            %h1 Keyword
+          .search#search
+      .panel-body#keyword-content
+        %table.table.table-hover
+          %thead 
+            %tr 
+              %th General
+              %th Specific
+              %th Extra 
+          %tbody
+            %tr 
+              %td iOS7
+              %td battary
+              %td bad
+            %tr 
+              %td iPhone6
+              %td design
+              %td not good
+            %tr 
+              %td 
+              %td 信号
+              %td 不给力
+            %tr 
+              %td 
+              %td 4G网络
+              %td 
+    /download
+    .panel.panel-default#download-panel
+      .panel-heading#header
+        .header-bot#header-bot
+          .title#title
+            %h1 Download
+          .search#search
+      .panel-body#download-content
+        %p 
+          \File #1: 
+          %a{:href => "#"} Raw_data.zip
+        %p 
+          \File #2: 
+          %a{:href => "#"} Export_Report.png
+
+  .col-lg-4
+    /Editor
+    .panel.panel-default#editor-panel
+      .panel-heading#header
+        .header-bot#header-bot
+          .title#title
+            %h1 Editor
+          .search#search
+      .panel-body#editor-content
+        %h4 Reports Code
+        %button.btn.btn-primary.btn-sm.pull-right{:type=>"button",:style=>"margin-bottom:10px;"}Send to Reports &raquo;
+        %textarea.form-control{:rows=>"30"}
+          %p require 'xmlrpc/client' 
+          %p client = XMLRPC::Client.new2('https://reports.sd.apple.com') 
+          %p report_key = client.call('reports.create', 'astephan@apple.com', 'my report', 'content') 
+          %p client.call('reports.email', report_key, 'astephan@apple.com', 'my draft notes')
+        %button.btn.btn-primary.btn-sm.pull-right{:type=>"button",:style=>"margin-top:10px;"}Send to Reports &raquo;
+  
