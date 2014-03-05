@@ -1,0 +1,70 @@
+/searchbox
+.input-group.col-lg-4#sitewatch-searchbox
+  %input.form-control.input-md{:type=>"text",:placeholder=>"Apple"}
+  %span.input-group-btn
+    %button.btn.btn-success.btn-md#sitewatch-searchbtn{:type=>"button"} Go
+
+/sitewatch view
+.row#sitewatch-view
+  / sitewatch header
+  .col-lg-12#header
+    .header-bot#header-bot
+      .title#title
+        %h1 Sitewatch
+      .search#search
+
+  / big frame with breadcrumb
+  .col-lg-12#container
+    .jive-body
+      .box
+        / breadbrumb
+        #guide
+          #guide_pad
+            #guide_wrap
+              %ol#breadcrumb
+                %li#bc-home
+                  %strong
+                    %a{:href=>"#"} Sitewatch
+                %li
+                  %strong
+                    %a{:href=>"#"} Userview China
+                %li.active
+                  %strong
+                    %a{:href=>"#"} Microblogs in Yunyun
+        / content box
+        #boxcap
+          #box-in
+            #box-in-1
+              #jive-body
+                / keywords
+                #jive-body-intro
+                  .jive-body-intro-community.jive-body-intro-content-page#jive-body-intro-content
+                    .clearfix#jive-alert
+                      .jive-alert-type.jive-alert-announcement
+                        .jive-alert-header
+                          %h5.jive-alert-title
+                            %a Keywords
+                        .jive-alert-content
+                          .jive-rendered-content
+                            %span iOS, iPhone, 苹果, 移动4G, 信号
+                / posts frame
+                #jive-body-main
+                  #jive-body-maincol-container
+                    #jive-body-maincol
+                      .jive-thread-messages
+                        / page control
+                        = render :partial => "sitewatch_pages/pagenav"
+                        / posts
+                        = render :partial => "sitewatch_pages/postsh"
+                        / posts
+                        = render :partial => "sitewatch_pages/postsh"
+                        / posts
+                        = render :partial => "sitewatch_pages/postsh"
+                        / posts
+                        = render :partial => "sitewatch_pages/postsh"
+                        / page control
+                        = render :partial => "sitewatch_pages/pagenav"
+          /box frame style
+          #box-bottom
+            %span.left-b
+            %span.right-b

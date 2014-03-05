@@ -67,3 +67,28 @@
   text-align: left;
   font-size: 90%;
 }
+
+//posts userview bar
+.post-footer{
+  border-bottom:1px solid rgb(196,196,196);
+}
+
+#userview-custom-bar{
+  margin-left:5px; 
+  height:40px;
+}
+
+#userview-custom-bar .row{
+  margin-top: 10px;
+  margin-right: 20px;
+}
+
+#userview-custom-bar .col-lg-3{
+  margin-top:3px;
+  margin-left:-20px;
+}
+
+#userview-custom-bar button{
+  margin-top:8px; 
+  margin-right:20px;
+}

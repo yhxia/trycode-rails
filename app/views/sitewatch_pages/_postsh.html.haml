@@ -1,0 +1,41 @@
+.jive-thread-post
+  %a
+  .jive-thread-post-body
+    /content
+    %form.mark-form
+      .jive-thread-post-body-container
+        
+        .jive-thread-post-subject
+          .jive-thread-post-subject-content
+            %h2
+              %a Re: Samsung SCX-4521F printing and scanning with OS X 10.9 Mavericks
+            %h3 
+              10/27/13 07:55 AM PDT on 
+              %a{:href => "#"} OS X Mavericks 
+              by 
+              %a{:href => "#"} MrHoffman
+        .jive-thread-post-message
+          .jive-rendered-content
+            %p In the absence of a confirming statement from the vendor (and unless you get lucky with somebody else around here that has this particular mult-function printer), you can install Mavericks on an external USB disk (either a fresh install, or clone your current boot disk and upgrade that), boot that external disk, and test.
+            %p &nbsp;
+            %p There are obviously a gazillion other models of multi-function devices around, so there are alternatives if Samsung doesn't update support for this printer.
+    
+    /custom userview bar
+    .post-footer
+      %ul.issues
+        .row#userview-custom-bar
+          %button.btn.btn-primary.btn-xs.pull-right{:type=>"button"} Add to report &raquo;
+          .col-lg-3.pull-right
+            %input.form-control.input-sm{:type => "text",:placeholder=>"Radar://..."}
+          .col-lg-3.pull-right
+            %input.form-control.input-sm{:type => "text",:placeholder=>"Comments..."}
+          .row.pull-right
+            %label.radio-inline.pull-left
+              %input{:type => "radio",:name=>"opjudge1",:id=>"op1",:value=>"positive"}
+                %span.label.label-success Positive
+            %label.radio-inline.pull-left
+              %input{:type => "radio",:name=>"opjudge1",:id=>"op2",:value=>"neutral"}
+                %span.label.label-info Neutral
+            %label.radio-inline.pull-left
+              %input{:type => "radio",:name=>"opjudge1",:id=>"op3",:value=>"negative"}
+                %span.label.label-danger Negative
