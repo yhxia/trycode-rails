@@ -10,29 +10,47 @@
 #report-view #header{
   min-width:0px;
   padding:0px;
-  width:100%;
   border-bottom-width: 0px;
+  margin-left:0px;
 }
 
 #report-view #header-bot{
   min-width:0px;
-  margin-left:-2px;
-  width:100.4%;
 }
 
-//#report-view table{
-//  table-layout: fixed;
-//  word-wrap: break-word;
-//}
+#report-view #report-content{
+  padding-left: 5px;
+  padding-right: 8px;
+  margin-top: 15px;
+}
 
-#charts-content .progress{
+#report-view #report-content h4{
+  margin: 0px 6px;
+}
+
+#report-view #charts-content .progress{
   margin-bottom:10px;
 }
 
-#charts-content .progress-bar{
+#report-view #charts-content .progress-bar{
   margin-top:0px;
+  border:none;
+}
+
+#report-view #charts-content th{
+  vertical-align: none!important;
 }
 
 #report-view table{
   margin-bottom:10px;
+/*  table-layout: fixed;
+  word-wrap: break-word;*/
+}
+
+#report-view progress{
+  margin-bottom: none!important;
+}
+
+#report-view #keyword-panel #keyword-content .alert{
+  margin-bottom: 5px;
 }

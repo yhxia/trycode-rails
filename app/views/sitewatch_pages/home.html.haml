@@ -1,8 +1,8 @@
-/searchbox
-.input-group.col-lg-4#sitewatch-searchbox
-  %input.form-control.input-md{:type=>"text",:placeholder=>"Apple"}
-  %span.input-group-btn
-    %button.btn.btn-success.btn-md#sitewatch-searchbtn{:type=>"button"} Go
+/ /searchbox
+/ .input-group.col-lg-4#sitewatch-searchbox
+/   %input.form-control.input-md{:type=>"text",:placeholder=>"Apple"}
+/   %span.input-group-btn
+/     %button.btn.btn-success.btn-md#sitewatch-searchbtn{:type=>"button"} Go
 
 /sitewatch view
 .row#sitewatch-view
@@ -16,6 +16,11 @@
   / big frame with breadcrumb
   .col-lg-12#container
     .jive-body
+      /searchbox
+      .input-group.col-lg-4#sitewatch-searchbox
+        %input.form-control.input-md{:type=>"text",:placeholder=>"Apple"}
+        %span.input-group-btn
+          %button.btn.btn-success.btn-md#sitewatch-searchbtn{:type=>"button"} Go
       .box
         / breadbrumb
         #guide
@@ -25,12 +30,12 @@
                 %li#bc-home
                   %strong
                     %a{:href=>"#"} Sitewatch
-                %li
-                  %strong
-                    %a{:href=>"#"} Userview China
                 %li.active
                   %strong
-                    %a{:href=>"#"} Microblogs in Yunyun
+                    %a{:href=>"#"} Userview
+                / %li.active
+                /   %strong
+                /     %a{:href=>"#"} Microblogs in Yunyun
         / content box
         #boxcap
           #box-in
@@ -39,14 +44,122 @@
                 / keywords
                 #jive-body-intro
                   .jive-body-intro-community.jive-body-intro-content-page#jive-body-intro-content
-                    .clearfix#jive-alert
-                      .jive-alert-type.jive-alert-announcement
-                        .jive-alert-header
-                          %h5.jive-alert-title
-                            %a Keywords
-                        .jive-alert-content
-                          .jive-rendered-content
-                            %span iOS, iPhone, 苹果, 移动4G, 信号
+                    .row#addfilterrow
+                      %strong#addfilter.pull-left Add Filter:
+                      .btn-group.pull-left
+                        %a{:class => 'btn btn-default btn-sm dropdown-toggle', "data-toggle" => 'dropdown', :type=>"button", :href => '#'}
+                          Condition
+                          %span{:class => 'caret'}
+                        %ul{:class => 'dropdown-menu',:role=>"menu"}
+                          %li 
+                            %a{:href => '#'} Project  
+                          %li 
+                            %a{:href => '#' } From  
+                          %li 
+                            %a{:href => '#' } To
+                          %li 
+                            %a{:href => '#'} Related  
+                          %li 
+                            %a{:href => '#' } Site  
+                          %li 
+                            %a{:href => '#' } Attitude
+                          %li 
+                            %a{:href => '#'} Saw
+                          %li 
+                            %a{:href => '#' } Marked  
+                          %li 
+                            %a{:href => '#' } Order
+                      .btn-group.pull-left#value
+                        %a{:class => 'btn btn-default btn-sm dropdown-toggle', "data-toggle" => 'dropdown', :type=>"button", :href => '#'}
+                          Value
+                          %span{:class => 'caret'}
+                        %ul{:class => 'dropdown-menu',:role=>"menu"}
+                          %li 
+                            %a{:href => '#'} iOS  
+                          %li 
+                            %a{:href => '#' } OS X  
+                          %li 
+                            %a{:href => '#' } iPhone
+                          %li 
+                            %a{:href => '#'} Mac
+                      .input-group.input-group-sm{:style=>"width:250px;"}
+                        %input.form-control{:type => "text"}/
+                        %span.input-group-btn
+                          %button.btn.btn-success{:type=>"button"} Add
+                    .row
+                      %strong#condition.pull-left Conditions:
+                      .alert.alert-default.alert-dismissable.pull-left
+                        %button.close{:type=>"button",'data-dismiss'=>"alert",'aria-hidden'=>"true"} &times;
+                        %strong Project:
+                        iOS
+                      .alert.alert-default.alert-dismissable.pull-left
+                        %button.close{:type=>"button",'data-dismiss'=>"alert",'aria-hidden'=>"true"} &times;
+                        %strong Project:
+                        iPhone
+                      .alert.alert-default.alert-dismissable.pull-left
+                        %button.close{:type=>"button",'data-dismiss'=>"alert",'aria-hidden'=>"true"} &times;
+                        %strong From:
+                        Feb 10th
+                      .alert.alert-default.alert-dismissable.pull-left
+                        %button.close{:type=>"button",'data-dismiss'=>"alert",'aria-hidden'=>"true"} &times;
+                        %strong To:
+                        Mar 7th
+                      .alert.alert-default.alert-dismissable.pull-left
+                        %button.close{:type=>"button",'data-dismiss'=>"alert",'aria-hidden'=>"true"} &times;
+                        %strong Related:
+                        True
+                      .alert.alert-default.alert-dismissable.pull-left
+                        %button.close{:type=>"button",'data-dismiss'=>"alert",'aria-hidden'=>"true"} &times;
+                        %strong Site:
+                        Yunyun.com
+                      .alert.alert-default.alert-dismissable.pull-left
+                        %button.close{:type=>"button",'data-dismiss'=>"alert",'aria-hidden'=>"true"} &times;
+                        %strong Attitude:
+                        Positive
+                      .alert.alert-default.alert-dismissable.pull-left
+                        %button.close{:type=>"button",'data-dismiss'=>"alert",'aria-hidden'=>"true"} &times;
+                        %strong Saw:
+                        False
+                      .alert.alert-default.alert-dismissable.pull-left
+                        %button.close{:type=>"button",'data-dismiss'=>"alert",'aria-hidden'=>"true"} &times;
+                        %strong Marked:
+                        False
+                      .alert.alert-default.alert-dismissable.pull-left
+                        %button.close{:type=>"button",'data-dismiss'=>"alert",'aria-hidden'=>"true"} &times;
+                        %strong Order:
+                        Latest
+                        / %span.label.label-warning.col-lg-1 filter1
+                        / %span.label.label-warning.col-lg-1 filter1
+                        / %span.label.label-warning.col-lg-1 filter1
+                        / %span.label.label-warning.col-lg-1 filter1
+                        / %span.label.label-warning.col-lg-1 filter1
+                        / %span.label.label-warning.col-lg-1 filter1
+                        / %span.label.label-warning.col-lg-1 filter1
+                        / %span.label.label-warning.col-lg-1 filter1
+                        / %span.label.label-warning.col-lg-1 filter1
+                        / %span.label.label-warning.col-lg-1 filter1
+                        / %span.label.label-warning.col-lg-1 filter1
+                        / %span.label.label-warning.col-lg-1 filter1
+                        / %span.label.label-warning.col-lg-1 filter1
+                        / %span.label.label-warning.col-lg-1 filter1
+                        / %span.label.label-warning.col-lg-1 filter1
+                        / %span.label.label-warning.col-lg-1 filter1
+                        / %span.label.label-warning.col-lg-1 filter1
+                        / %span.label.label-warning.col-lg-1 filter1
+                        / %span.label.label-warning.col-lg-1 filter1
+                        / %span.label.label-warning.col-lg-1 filter1
+                        / %span.label.label-warning.col-lg-1 filter1
+                        / %span.label.label-warning.col-lg-1 filter1
+                        / %span.label.label-warning.col-lg-1 filter1
+                        / %span.label.label-warning.col-lg-1 filter1                  
+                    / .clearfix#jive-alert
+                    /   .jive-alert-type.jive-alert-announcement
+                    /     .jive-alert-header
+                    /       %h5.jive-alert-title
+                    /         %a Keywords
+                    /     .jive-alert-content
+                    /       .jive-rendered-content
+                    /         %span Apple
                 / posts frame
                 #jive-body-main
                   #jive-body-maincol-container

@@ -1,154 +1,201 @@
 /report view
 .row#report-view
-  .col-lg-8
-    /highlight
-    .panel.panel-default#highlight-panel
-      .panel-heading#header
-        .header-bot#header-bot
-          .title#title
-            %h1 Highlight View
-          .search#search
-      .panel-body#hightlight-content
-        %table.table.table-hover
-          %thead 
-            %tr 
-              %th #
-              %th View Link
-              %th Radar Link
-              %th Attitude
-              %th Edit
-          %tbody
-            %tr
-              %td 1
-              %td 
-                %a{:href => "http://www.weibo.com/2243807243/Azrlac5Re"} http://www.weibo.com/2243807243/Azrlac5Re
-              %td 
-                %a{:href => "rdar://problem/16144491"} rdar://problem/16144491
-              %td 
-                %span.label.label-success Positive
-              %td
-                %a{:href => "#"} 
-                  %span.glyphicon.glyphicon-pencil
-            %tr
-              %td 2
-              %td 
-                %a{:href => "http://www.weibo.com/2243807243/Azrlac5Re"} http://www.weibo.com/2243807243/Azrlac5Re
-              %td 
-                %a{:href => "rdar://problem/16144491"} rdar://problem/16144491
-              %td 
-                %span.label.label-info Neutral
-              %td
-                %a{:href => "#"} 
-                  %span.glyphicon.glyphicon-pencil
-            %tr
-              %td 3
-              %td 
-                %a{:href => "http://www.weibo.com/2243807243/Azrlac5Re"} http://www.weibo.com/2243807243/Azrlac5Re
-              %td 
-                %a{:href => "rdar://problem/16144491"} rdar://problem/16144491
-              %td 
-                %span.label.label-danger Negative
-              %td
-                %a{:href => "#"} 
-                  %span.glyphicon.glyphicon-pencil
-    /charts
-    .panel.panel-default#charts-panel
-      .panel-heading#header
-        .header-bot#header-bot
-          .title#title
-            %h1 Chart
-          .search#search
-      .panel-body#charts-content
-        %table.table.table-hover
-          %thead 
-            %tr 
-              %th Target
-              %th{:style=>"width:80%"} Attitude Bar
-              %th Total
-          %tbody
-            %tr 
-              %td iOS7
-              %td 
-                .progress{:style=>"width:50%"}
-                  .progress-bar.progress-bar-success{:style=>"width:35%"}
-                    %p 35%
-                  .progress-bar.progress-bar-info{:style=>"width:20%"}
-                    %p 20% 
-                  .progress-bar.progress-bar-danger{:style=>"width:45%"}
-                    %p 45%
-              %td 1242
-            %tr 
-              %td iPhone6
-              %td 
-                .progress{:style=>"width:100%"}
-                  .progress-bar.progress-bar-success{:style=>"width:23%"}
-                    %p 23%
-                  .progress-bar.progress-bar-info{:style=>"width:64%"}
-                    %p 64% 
-                  .progress-bar.progress-bar-danger{:style=>"width:13%"}
-                    %p 13%
-              %td 2723
-    /keyword
-    .panel.panel-default#keyword-panel
-      .panel-heading#header
-        .header-bot#header-bot
-          .title#title
-            %h1 Keyword
-          .search#search
-      .panel-body#keyword-content
-        %table.table.table-hover
-          %thead 
-            %tr 
-              %th General
-              %th Specific
-              %th Extra 
-          %tbody
-            %tr 
-              %td iOS7
-              %td battary
-              %td bad
-            %tr 
-              %td iPhone6
-              %td design
-              %td not good
-            %tr 
-              %td 
-              %td 信号
-              %td 不给力
-            %tr 
-              %td 
-              %td 4G网络
-              %td 
-    /download
-    .panel.panel-default#download-panel
-      .panel-heading#header
-        .header-bot#header-bot
-          .title#title
-            %h1 Download
-          .search#search
-      .panel-body#download-content
-        %p 
-          \File #1: 
-          %a{:href => "#"} Raw_data.zip
-        %p 
-          \File #2: 
-          %a{:href => "#"} Export_Report.png
+  .col-lg-12
+    #header
+      .header-bot#header-bot
+        .title#title
+          %h1 Report
+        .search#search
 
-  .col-lg-4
-    /Editor
-    .panel.panel-default#editor-panel
-      .panel-heading#header
-        .header-bot#header-bot
-          .title#title
-            %h1 Editor
-          .search#search
-      .panel-body#editor-content
-        %h4 Reports Code
-        %button.btn.btn-primary.btn-sm.pull-right{:type=>"button",:style=>"margin-bottom:10px;"}Send to Reports &raquo;
-        %textarea.form-control{:rows=>"30"}
-          %p require 'xmlrpc/client' 
-          %p client = XMLRPC::Client.new2('https://reports.sd.apple.com') 
-          %p report_key = client.call('reports.create', 'astephan@apple.com', 'my report', 'content') 
-          %p client.call('reports.email', report_key, 'astephan@apple.com', 'my draft notes')
-        %button.btn.btn-primary.btn-sm.pull-right{:type=>"button",:style=>"margin-top:10px;"}Send to Reports &raquo;
+  .col-lg-12#report-content
+    .col-lg-9#left-panel
+      /summary
+      .panel.panel-default#summary-panel
+        .panel-heading
+          %h4 Summary
+        .panel-body#summary-content
+          %textarea.form-control{:rows=>"3",:placeholder=>"Input summary on the top..."}
+
+      /highlight
+      .panel.panel-default#highlight-panel
+        .panel-heading
+          %h4 Highlight
+        .panel-body#hightlight-content
+          %table.table.table-hover
+            %thead 
+              %tr 
+                %th{:style=>"width:5%;"} #
+                %th Comments
+                %th{:style=>"width:5%;"} Weibo
+                %th{:style=>"width:5%;"} Radar
+                %th{:style=>"width:5%;"} Edit
+            %tbody
+              %tr
+                %td 1
+                %td
+                  %p This is a big system problem.
+                %td 
+                  %button.btn.btn-default.btn-xs{:type=>"button"} #1
+                  %button.btn.btn-default.btn-xs{:type=>"button"} #2
+                %td
+                  %button.btn.btn-default.btn-xs{:type=>"button"} #16244188
+                  %button.btn.btn-default.btn-xs{:type=>"button"} #16244237
+                %td
+                  %a{:href => "#"} 
+                    %span.glyphicon.glyphicon-pencil
+              %tr
+                %td 2
+                %td
+                  %p Problem of battary.
+                %td 
+                  %button.btn.btn-default.btn-xs{:type=>"button"} #1
+                %td
+                  %button.btn.btn-default.btn-xs{:type=>"button"} #16247425
+                %td
+                  %a{:href => "#"} 
+                    %span.glyphicon.glyphicon-pencil
+              %tr
+                %td 3
+                %td
+                  %p Fix it soon.
+                %td 
+                  %button.btn.btn-default.btn-xs{:type=>"button"} #1
+                  %button.btn.btn-default.btn-xs{:type=>"button"} #2
+                  %button.btn.btn-default.btn-xs{:type=>"button"} #3
+                  %button.btn.btn-default.btn-xs{:type=>"button"} #4
+                %td
+                  %button.btn.btn-default.btn-xs{:type=>"button"} #16244628
+                  %button.btn.btn-default.btn-xs{:type=>"button"} #16231652
+                  %button.btn.btn-default.btn-xs{:type=>"button"} #16246255
+                  %button.btn.btn-default.btn-xs{:type=>"button"} #16272354
+                %td
+                  %a{:href => "#"} 
+                    %span.glyphicon.glyphicon-pencil
+      
+      /charts
+      .panel.panel-default#charts-panel
+        .panel-heading
+          %h4 Chart
+        .panel-body#charts-content
+          %table.table.table-hover
+            %thead 
+              %tr 
+                %th Keyword
+                %th.row{:style=>"width:80%;"}
+                  %label.pull-left{:style=>"margin-bottom:0px;"} Attitude Bar
+                  .progress.pull-left{:style=>"width:32%; margin-bottom:0px; margin-left:15px;"}
+                    .progress-bar.progress-bar-success{:style=>"width:33%"}
+                      %span.sr-only 33%
+                      %p Positive
+                    .progress-bar.progress-bar-info{:style=>"width:33%"}
+                      %span.sr-only 33%
+                      %p Neutral
+                    .progress-bar.progress-bar-danger{:style=>"width:34%"}
+                      %span.sr-only 33%
+                      %p Negative
+                %th Total
+            %tbody
+              %tr 
+                %td iOS7
+                %td 
+                  .progress{:style=>"width:51%"}
+                    .progress-bar.progress-bar-success{:style=>"width:35%"}
+                      %span.sr-only 33%
+                      %p 35%
+                    .progress-bar.progress-bar-info{:style=>"width:20%"}
+                      %span.sr-only 33%
+                      %p 20% 
+                    .progress-bar.progress-bar-danger{:style=>"width:45%"}
+                      %span.sr-only 33%
+                      %p 45%
+                %td 1242
+              %tr 
+                %td iPhone6
+                %td 
+                  .progress{:style=>"width:90%"}
+                    .progress-bar.progress-bar-success{:style=>"width:23%"}
+                      %span.sr-only 33%
+                      %p 23%
+                    .progress-bar.progress-bar-info{:style=>"width:64%"}
+                      %span.sr-only 33%
+                      %p 64% 
+                    .progress-bar.progress-bar-danger{:style=>"width:13%"}
+                      %span.sr-only 33%
+                      %p 13%
+                %td 2723
+      
+      /keyword
+      .panel.panel-default#keyword-panel
+        .panel-heading
+          %h4 Keyword Combo
+        .panel-body#keyword-content
+          %table.table.table-hover
+            / %tbody
+            /   %tr
+            /     %th project
+            /     %td iOS7
+            /     %td iPhone6
+            /     %td 
+            /     %td 
+            /   %tr 
+            /     %th keyword
+            /     %td battary
+            /     %td design
+            /     %td 信号
+            /     %td 4G网络
+            %thead 
+              %tr 
+                %th project
+                %th keyword
+            %tbody 
+              %tr 
+                %td iOS7
+                %td battary
+              %tr 
+                %td iPhone6
+                %td design
+              %tr 
+                %td 
+                %td 信号
+              %tr 
+                %td 
+                %td 4G网络
+
+    .col-lg-3
+      /To
+      .panel.panel-default#to-panel
+        .panel-heading
+          %h4 To
+        .panel-body#to-content
+          %input.form-control{:type => "text",:placeholder=>"Your Email address..."}
+          %button.btn.btn-primary.btn-sm.pull-right{:type=>"button",:style=>"margin-top:10px;"}Send Report &raquo;
+      /Attach
+      .panel.panel-default#attach-panel
+        .panel-heading
+          %h4 Attach
+        .panel-body#attach-content
+          %p 
+            File #1: 
+            %a{:href => "#"} Raw_data.zip
+          %p 
+            File #2: 
+            %a{:href => "#"} Export_Report.pdf
+  / .col-lg-4
+  /   /Editor
+  /   .panel.panel-default#editor-panel
+  /     .panel-heading#header
+  /       .header-bot#header-bot
+  /         .title#title
+  /           %h1 Editor
+  /         .search#search
+  /     .panel-body#editor-content
+  /       %h4 Reports Code
+  /       %textarea.form-control{:rows=>"30"}
+  /         %p require 'xmlrpc/client' 
+  /         %p client = XMLRPC::Client.new2('https://reports.sd.apple.com') 
+  /         %p report_key = client.call('reports.create', 'astephan@apple.com', 'my report', 'content') 
+  /         %p client.call('reports.email', report_key, 'astephan@apple.com', 'my draft notes')
+  /       %button.btn.btn-primary.btn-sm.pull-right{:type=>"button",:style=>"margin-top:10px;"}Send to Reports &raquo;
   
+
+

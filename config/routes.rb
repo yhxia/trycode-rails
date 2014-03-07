@@ -9,7 +9,11 @@ Uview20140227::Application.routes.draw do
   #report_pages
   match '/report', to: 'report_pages#home', via: 'get'
 
-  # The priority is based upon order of creation:
+  #sitewatch_pages
+  match '/status', to: 'status_pages#home', via: 'get'
+
+  #sitewatch_pages
+  match '/about', to: 'about_pages#home', via: 'get'  # The priority is based upon order of creation:
   # first created -> highest priority.
 
   # Sample of regular route:
