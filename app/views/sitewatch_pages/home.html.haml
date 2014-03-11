@@ -1,9 +1,3 @@
-/ /searchbox
-/ .input-group.col-lg-4#sitewatch-searchbox
-/   %input.form-control.input-md{:type=>"text",:placeholder=>"Apple"}
-/   %span.input-group-btn
-/     %button.btn.btn-success.btn-md#sitewatch-searchbtn{:type=>"button"} Go
-
 /sitewatch view
 .row#sitewatch-view
   / sitewatch header
@@ -16,32 +10,31 @@
   / big frame with breadcrumb
   .col-lg-12#container
     .jive-body
-      /searchbox
+      /searchbox [done]
       .input-group.col-lg-4#sitewatch-searchbox
-        %input.form-control.input-md{:type=>"text",:placeholder=>"Apple"}
+        = text_field_tag 'text', nil, placeholder: @search_box_placeholder_text, class: "form-control input-md"
         %span.input-group-btn
-          %button.btn.btn-success.btn-md#sitewatch-searchbtn{:type=>"button"} Go
+          %button.btn.btn-success.btn-md#sitewatch-searchbtn{:type=>"button", :herf=>"#"} Go
       .box
-        / breadbrumb
+        / breadcrumb [done]
         #guide
           #guide_pad
             #guide_wrap
               %ol#breadcrumb
                 %li#bc-home
                   %strong
-                    %a{:href=>"#"} Sitewatch
-                %li.active
-                  %strong
-                    %a{:href=>"#"} Userview
-                / %li.active
-                /   %strong
-                /     %a{:href=>"#"} Microblogs in Yunyun
+                    %a{:href=>"/"} Home
+                -@breadcrumb_array.each do |name,isActive|
+                  %li{:class=> isActive}
+                    %strong
+                      %a{:href=>"#"}
+                        =name
         / content box
         #boxcap
           #box-in
             #box-in-1
               #jive-body
-                / keywords
+                / keywords [Todo: use ajax to control add function]
                 #jive-body-intro
                   .jive-body-intro-community.jive-body-intro-content-page#jive-body-intro-content
                     .row#addfilterrow
@@ -51,130 +44,48 @@
                           Condition
                           %span{:class => 'caret'}
                         %ul{:class => 'dropdown-menu',:role=>"menu"}
-                          %li 
-                            %a{:href => '#'} Project  
-                          %li 
-                            %a{:href => '#' } From  
-                          %li 
-                            %a{:href => '#' } To
-                          %li 
-                            %a{:href => '#'} Related  
-                          %li 
-                            %a{:href => '#' } Site  
-                          %li 
-                            %a{:href => '#' } Attitude
-                          %li 
-                            %a{:href => '#'} Saw
-                          %li 
-                            %a{:href => '#' } Marked  
-                          %li 
-                            %a{:href => '#' } Order
+                          -@filter_list.each do |condition,value_list|
+                            %li 
+                              %a{:href => '#'}
+                                = condition
+                              = hidden_field_tag 'value_list', value_list
                       .btn-group.pull-left#value
-                        %a{:class => 'btn btn-default btn-sm dropdown-toggle', "data-toggle" => 'dropdown', :type=>"button", :href => '#'}
-                          Value
-                          %span{:class => 'caret'}
-                        %ul{:class => 'dropdown-menu',:role=>"menu"}
-                          %li 
-                            %a{:href => '#'} iOS  
-                          %li 
-                            %a{:href => '#' } OS X  
-                          %li 
-                            %a{:href => '#' } iPhone
-                          %li 
-                            %a{:href => '#'} Mac
-                      .input-group.input-group-sm{:style=>"width:250px;"}
-                        %input.form-control{:type => "text"}/
-                        %span.input-group-btn
-                          %button.btn.btn-success{:type=>"button"} Add
+                        / [Todo: use js to control it show]
+                        / %a{:class => 'btn btn-default btn-sm dropdown-toggle', "data-toggle" => 'dropdown', :type=>"button", :href => '#'}
+                        /   Value
+                        /   %span{:class => 'caret'}
+                        / %ul{:class =>'dropdown-menu',:role=>"menu"}
+                        /   %li 
+                        /     %a{:href => '#'} iOS
+                        /   %li 
+                        /     %a{:href => '#' } OS X  
+                        /   %li 
+                        /     %a{:href => '#' } iPhone
+                        /   %li 
+                        /     %a{:href => '#'} Mac
+                      / [ignored add input frame]
+                      / .input-group.input-group-sm{:style=>"width:250px;"}
+                      /   %input.form-control{:type => "text"}/
+                      /   %span.input-group-btn
+                      /     %button.btn.btn-success{:type=>"button"} Add
+                    / Conditions list [done]
                     .row
                       %strong#condition.pull-left Conditions:
-                      .alert.alert-default.alert-dismissable.pull-left
-                        %button.close{:type=>"button",'data-dismiss'=>"alert",'aria-hidden'=>"true"} &times;
-                        %strong Project:
-                        iOS
-                      .alert.alert-default.alert-dismissable.pull-left
-                        %button.close{:type=>"button",'data-dismiss'=>"alert",'aria-hidden'=>"true"} &times;
-                        %strong Project:
-                        iPhone
-                      .alert.alert-default.alert-dismissable.pull-left
-                        %button.close{:type=>"button",'data-dismiss'=>"alert",'aria-hidden'=>"true"} &times;
-                        %strong From:
-                        Feb 10th
-                      .alert.alert-default.alert-dismissable.pull-left
-                        %button.close{:type=>"button",'data-dismiss'=>"alert",'aria-hidden'=>"true"} &times;
-                        %strong To:
-                        Mar 7th
-                      .alert.alert-default.alert-dismissable.pull-left
-                        %button.close{:type=>"button",'data-dismiss'=>"alert",'aria-hidden'=>"true"} &times;
-                        %strong Related:
-                        True
-                      .alert.alert-default.alert-dismissable.pull-left
-                        %button.close{:type=>"button",'data-dismiss'=>"alert",'aria-hidden'=>"true"} &times;
-                        %strong Site:
-                        Yunyun.com
-                      .alert.alert-default.alert-dismissable.pull-left
-                        %button.close{:type=>"button",'data-dismiss'=>"alert",'aria-hidden'=>"true"} &times;
-                        %strong Attitude:
-                        Positive
-                      .alert.alert-default.alert-dismissable.pull-left
-                        %button.close{:type=>"button",'data-dismiss'=>"alert",'aria-hidden'=>"true"} &times;
-                        %strong Saw:
-                        False
-                      .alert.alert-default.alert-dismissable.pull-left
-                        %button.close{:type=>"button",'data-dismiss'=>"alert",'aria-hidden'=>"true"} &times;
-                        %strong Marked:
-                        False
-                      .alert.alert-default.alert-dismissable.pull-left
-                        %button.close{:type=>"button",'data-dismiss'=>"alert",'aria-hidden'=>"true"} &times;
-                        %strong Order:
-                        Latest
-                        / %span.label.label-warning.col-lg-1 filter1
-                        / %span.label.label-warning.col-lg-1 filter1
-                        / %span.label.label-warning.col-lg-1 filter1
-                        / %span.label.label-warning.col-lg-1 filter1
-                        / %span.label.label-warning.col-lg-1 filter1
-                        / %span.label.label-warning.col-lg-1 filter1
-                        / %span.label.label-warning.col-lg-1 filter1
-                        / %span.label.label-warning.col-lg-1 filter1
-                        / %span.label.label-warning.col-lg-1 filter1
-                        / %span.label.label-warning.col-lg-1 filter1
-                        / %span.label.label-warning.col-lg-1 filter1
-                        / %span.label.label-warning.col-lg-1 filter1
-                        / %span.label.label-warning.col-lg-1 filter1
-                        / %span.label.label-warning.col-lg-1 filter1
-                        / %span.label.label-warning.col-lg-1 filter1
-                        / %span.label.label-warning.col-lg-1 filter1
-                        / %span.label.label-warning.col-lg-1 filter1
-                        / %span.label.label-warning.col-lg-1 filter1
-                        / %span.label.label-warning.col-lg-1 filter1
-                        / %span.label.label-warning.col-lg-1 filter1
-                        / %span.label.label-warning.col-lg-1 filter1
-                        / %span.label.label-warning.col-lg-1 filter1
-                        / %span.label.label-warning.col-lg-1 filter1
-                        / %span.label.label-warning.col-lg-1 filter1                  
-                    / .clearfix#jive-alert
-                    /   .jive-alert-type.jive-alert-announcement
-                    /     .jive-alert-header
-                    /       %h5.jive-alert-title
-                    /         %a Keywords
-                    /     .jive-alert-content
-                    /       .jive-rendered-content
-                    /         %span Apple
+                      -@conditions_list.each do |condition,value|
+                        .alert.alert-default.alert-dismissable.pull-left
+                          %button.close{:type=>"button",'data-dismiss'=>"alert",'aria-hidden'=>"true"} &times;
+                          %strong 
+                            =condition+ ":"
+                          =value
                 / posts frame
                 #jive-body-main
                   #jive-body-maincol-container
                     #jive-body-maincol
                       .jive-thread-messages
-                        / page control
+                        / page control [Todo: pagenav]
                         = render :partial => "sitewatch_pages/pagenav"
-                        / posts
-                        = render :partial => "sitewatch_pages/postsh"
-                        / posts
-                        = render :partial => "sitewatch_pages/postsh"
-                        / posts
-                        = render :partial => "sitewatch_pages/postsh"
-                        / posts
-                        = render :partial => "sitewatch_pages/postsh"
+                        / posts [done]
+                        = render :partial => "sitewatch_pages/posts"
                         / page control
                         = render :partial => "sitewatch_pages/pagenav"
           /box frame style

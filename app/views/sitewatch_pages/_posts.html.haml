@@ -1,0 +1,47 @@
+-@posts_list.each do |post|
+  .jive-thread-post
+    %a
+    .jive-thread-post-body
+      /content [done]
+      %form.mark-form
+        .jive-thread-post-body-container
+          
+          .jive-thread-post-subject
+            .jive-thread-post-subject-content
+              %h2
+                %a 
+                  =post[:title] + "..."
+              %h3 
+                =post[:time] + " on" 
+                %a{:href => "#"} 
+                  =post[:site]
+                by 
+                %a{:href => "#"} 
+                  =post[:author]
+          .jive-thread-post-message
+            .jive-rendered-content
+              %p
+                =post[:content]
+      
+      /custom userview bar [done. still need use js to manipulate]
+      .post-footer
+        %ul.issues
+          .row#userview-custom-bar
+            =button_tag 'Add to report »', class: "btn btn-xs pull-right btn-primary", disabled: post[:attitude]<2
+            .col-lg-3.pull-right
+              =text_field_tag 'radarinput', post[:radar], placeholder: 'rdar://...', class: "form-control input-sm"
+            .col-lg-3.pull-right
+              =text_field_tag 'commentinput', post[:comment], placeholder: 'comment...', class: "form-control input-sm"
+            .row.pull-right
+              %label.radio-inline.pull-left
+                =radio_button_tag post[:id], 'unrelated', post[:attitude]==1
+                %span.label.label-default Unrelated
+              %label.radio-inline.pull-left
+                =radio_button_tag post[:id], 'positive', post[:attitude]==2
+                %span.label.label-success Positive
+              %label.radio-inline.pull-left
+                =radio_button_tag post[:id], 'neutral', post[:attitude]==3
+                %span.label.label-info Neutral
+              %label.radio-inline.pull-left
+                =radio_button_tag post[:id], 'negative', post[:attitude]==4
+                %span.label.label-danger Negative

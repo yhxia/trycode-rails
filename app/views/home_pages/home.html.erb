@@ -2,37 +2,29 @@
 <!-- Jumbotron -->
 <div class="jumbotron">
   <h1>Userview</h1>
-<!--   <p class="lead">Yes, you can know what users may think. iNeed integrated with <a href="https://sitewatch.apple.com/">Sitewatch</a> and <a href="https://reports.sd.apple.com/">Reports</a>. <br>Besides, we know more about international users through emotion analysis technique. Just for Apple.</p> -->
 
-  <!-- Search Box -->
+  <!-- Search Box [done]-->
   <div class="row" id="home-searchbox">
     <div class="col-lg-8 col-md-offset-2">
       <div class="input-group">
-        <input type="text" class="form-control input-lg" placeholder="Apple">
+        <%= text_field_tag 'text', nil, placeholder: @search_box_placeholder_text, class: "form-control input-lg"%>
         <span class="input-group-btn">
-          <button class="btn btn-success btn-lg" type="button">Go</button>
+          <button class="btn btn-success btn-lg" type="button" href="#">Go</button>
         </span>
       </div><!-- /input-group -->
     </div><!-- /.col-lg-8 -->
     <div class="col-lg-2"></div>
   </div>
-  <!-- <p><a class="btn btn-lg btn-success" href="#" role="button">Get started today</a></p> -->
-  
-  <!-- Hot words -->
+
+  <!-- Hot words [done]-->
   <p class="row" id="home-hotwords">
-    <a>iPhone5s</a> | 
-    <a>苹果</a> | 
-    <a>iOS7</a> | 
-    <a>Siri</a> | 
-    <a>App Store</a> |
-    <a>输入法</a> | 
-    <a>iPad</a> | 
-    <a>移动4G</a> | 
-    <a>Mac</a> | 
-    <a>iPod</a> 
+    <% @hotword_list_array.each_with_index do |word,index| %>
+      <%= "|" if index!=0%>
+      <a href="#"><%= word %></a>
+    <% end %>
   </p>
   
-  <!-- Example row of columns -->
+  <!-- Example row of columns [done]-->
   <div class="row" id="home-status">
     <div class="col-lg-1"></div>    
 
@@ -40,8 +32,9 @@
       <h2>Collecting</h2>
       <table class="table table-hover">
         <tbody>
-          <tr><td>iPhone</td><td>1 hours</td></tr>
-          <tr><td>iOS</td><td>2 days</td></tr>        
+          <% @collecting_table_array.each do |key,value| %>
+          <tr><td><%= key %></td><td><%= value %></td></tr>   
+          <% end %>
         </tbody>
       </table>
       <p><%= link_to "Request Keyword »", about_path, :class=>"btn btn-primary", :role=>"button" %></p> 
@@ -53,8 +46,9 @@
       <h2>Finished</h2>
       <table class="table table-hover">
         <tbody>
-          <tr><td>苹果</td><td>1523 views</td></tr>
-          <tr><td>移动4G</td><td>325 views</td></tr>        
+          <% @finished_table_array.each do |key,value| %>
+          <tr><td><%= key %></td><td><%= value %></td></tr>   
+          <% end %>    
         </tbody>
       </table>
       <p><%= link_to "View More »", status_path, :class=>"btn btn-primary", :role=>"button" %></p> 
