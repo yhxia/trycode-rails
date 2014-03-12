@@ -72,6 +72,7 @@ GEM
     nokogiri (1.6.1)
       mini_portile (~> 0.5.0)
     pg (0.15.1)
+    phantomjs (1.9.7.0)
     polyglot (0.3.4)
     rack (1.5.2)
     rack-test (0.6.2)
@@ -109,7 +110,7 @@ GEM
       rspec-expectations (~> 2.13.0)
       rspec-mocks (~> 2.13.0)
     rubyzip (0.9.9)
-    sass (3.2.14)
+    sass (3.3.2)
     sass-rails (4.0.1)
       railties (>= 4.0.0, < 5.0)
       sass (>= 3.1.10)
@@ -141,7 +142,7 @@ GEM
       polyglot (>= 0.3.1)
     turbolinks (1.1.1)
       coffee-rails
-    tzinfo (0.3.38)
+    tzinfo (0.3.39)
     uglifier (2.1.1)
       execjs (>= 0.3.0)
       multi_json (~> 1.0, >= 1.0.2)
@@ -159,6 +160,7 @@ DEPENDENCIES
   jbuilder (= 1.0.2)
   jquery-rails (= 2.2.1)
   pg (= 0.15.1)
+  phantomjs
   rails (= 4.0.2)
   rails_12factor (= 0.0.2)
   rspec-rails (= 2.13.1)

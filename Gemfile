@@ -71,3 +71,5 @@ end
 
 # Can't be in assets group
 gem 'haml-rails'
+
+gem 'phantomjs'
