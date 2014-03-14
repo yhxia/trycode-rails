@@ -1,0 +1,222 @@
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE8">
+<title>ios7.1 - 云云微博搜索</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<meta property="qc:admins" content="01002612761566375">
+<meta property="wb:webmaster" content="3a342ac68c4ed1c3">
+<link rel="icon" href="http://yunstatic.com/yysearch/images/favicon.ico" type="image/x-icon">
+<link rel="shortcut icon" href="http://yunstatic.com/yysearch/images/favicon.ico" type="image/x-icon">
+<link rel="apple-touch-icon-precomposed" href="http://yunstatic.com/yysearch/images/touch_logo_precomposed.png" sizes="114x114">
+<link href="http://yunstatic.com/yysearch/css/v115/common.css" rel="stylesheet" type="text/css">
+<link href="http://yunstatic.com/yysearch/css/v115/main.css" rel="stylesheet" type="text/css">
+<link rel="search" type="application/opensearchdescription+xml" href="http://yunstatic.com/yysearch/misc/opensearch.xml" title="云云搜索">
+    <script type="text/javascript">
+  var _yrWebRoot = 'http://www.yunyun.com';
+  var _yrWebSearchRoot = 'http://www.yunyun.com';
+  var _yrImageSearchRoot = 'http://image.yunyun.com';
+  var _yrWeiboSearchRoot = 'http://weibo.yunyun.com';
+  var _yrSocialRoot = 'http://social.yunyun.com';
+  var _yrReaderRoot = 'http://reader.yunyun.com';
+  var _yrSsoServer = 'https://passport.yunyun.com';
+  var _yrJsRoot = 'http://yunstatic.com/yysearch/js/v115';
+  var _yrSecureServer = 'http://social.yunyun.com';
+  var _yrCookieRoot = 'yunyun.com';
+  var _yrImageRoot = 'http://yunstatic.com/yysearch/images';
+  var _yrMiscRoot = 'http://yunstatic.com/yysearch/misc';
+  var _yrMediaRoot = 'http://yunstatic.com/httpmediaserver/?mediaid=';
+  var _yrMediaProxyRoot = 'http://gallery.yunstatic.com/httpgallery/?mediaid=';
+  var _yrVersion = '115';
+  var _yrTimestamp = 1394766023;
+  var _yrIH = '';
+  var _yrUid = '0';
+    var _yrStickyParams = {"udbg":1,"refl":1,"vism":1,"feu":1,"sexp":1,"devi":1,"mfltt":1,"wbts":1};
+    var _yrIsGaoKao = 0;
+  var _yrProd = '2';
+  var _yrUCKVs = [];
+  </script>
+    <script type="text/javascript" src="http://yunstatic.com/yysearch/js/v115/application_bundle.js"></script>
+    <script type="text/javascript" charset="UTF-8" src="http://yunstatic.com/yysearch/js/v115/util_bundle.js"></script><script type="text/javascript" charset="UTF-8" src="http://yunstatic.com/yysearch/js/v115/ui_bundle.js"></script><style>.slideview{float:left;position:relative;overflow:hidden;border:1px solid #e4e4e4}.slide_l,.slide_r{float:left;width:18px;position:relative;overflow:hidden;cursor:pointer}.slide_l{border-right:1px solid #e4e4e4}.slide_r{border-left:1px solid #e4e4e4}.slide_l a,.slide_r a{display:block;cursor:pointer;width:18px;padding:3px 0;height:60px;background:#f9f9f9}.slide_l a:hover,.slide_r a:hover{background:#f0f0f0}.slide_l .slide_disable:hover,.slide_r .slide_disable:hover{background:#f9f9f9;cursor:default}.slide_pre,.slide_next{background:url(http://yunstatic.com/yysearch/images/misc_icon_20120904.png) no-repeat;display:inline-block}.slide_pre{background-position:-170px -37px;cursor:pointer}.slide_next{background-position:-175px -37px;cursor:pointer}.slide_l a:hover .slide_pre{background-position:-170px -37px}.slide_r a:hover .slide_next{background-position:-175px -37px}.slide_pre,.slide_next{position:absolute;left:50%;top:50%;margin:-6px 0 0 -3px;width:6px;height:12px}.slideview_viewport{float:left;height:60px;width:538px;padding:3px 0;position:relative;overflow:hidden}.slideview_viewport ul{float:left;white-space:nowrap;position:relative}.slideview_viewport li{position:relative;width:90px;height:60px;cursor:pointer;float:left;background:#eee;margin:0 3px}</style><script type="text/javascript" charset="UTF-8" src="http://yunstatic.com/yysearch/js/v115/default_bundle.js"></script><style>.ac-renderer{font:normal 13px Arial,sans-serif;position:absolute;background:#fff;border:1px solid #CCC;-moz-box-shadow:2px 2px 2px rgba(102,102,102,.4);-webkit-box-shadow:2px 2px 2px rgba(102,102,102,.4);z-index:20000;margin-left:-3px}.ac-row{cursor:pointer;padding:4px 8px;color:#333;height:25px;line-height:25px;white-space:nowrap;overflow:hidden}.ac-row img{width:25px;height:25px;margin-right:8px;margin-left:5px}.ac-highlighted{font-weight:bold;color:#000}.ac-active{background-color:#d5e2ff}.at_border{font:normal 13px Arial,sans-serif;position:absolute;background:#fff;border:1px solid #d4d4d4;border-top:0;-moz-box-shadow:0 2px 2px rgba(102,102,102,.4);-webkit-box-shadow:0 2px 2px rgba(102,102,102,.4);width:360px}.pond_border{font:normal 13px Arial,sans-serif;position:absolute;background:#fff;border:1px solid #d4d4d4;border-top:0;-moz-box-shadow:0 2px 2px rgba(102,102,102,.4);-webkit-box-shadow:0 2px 2px rgba(102,102,102,.4);width:290px}</style><script type="text/javascript" charset="UTF-8" src="http://yunstatic.com/yysearch/js/v115/landingguide_bundle.js"></script></head>
+<body>
+<iframe style="display:none;" name="yrsecureframe"></iframe>
+<iframe id="yr_history_iframe" style="display:none">
+  &lt;html&gt;
+    &lt;head&gt; &lt;title&gt;The iframe for history&lt;/title&gt; &lt;/head&gt;
+    &lt;body&gt;&lt;/body&gt;
+  &lt;/html&gt;
+</iframe>
+<input type="text" name="yr_history_input" id="yr_history_input" style="display:none">
+<iframe src="http://weibo.com/aj/static/sync.html?userid=4323694201334864678" style="display:none;"></iframe><div id="wrap">
+<div id="placeHolder" style="height: 94px; width: 100%; "></div>
+<div id="headbar" style="width: 100%; top: 0px; left: 0px; position: fixed; z-index: 100; ">
+  <div id="yy_hd">
+    <div class="inner">
+    <div class="status_bar">
+    <span class="fl nav">
+        <a onmousedown="if(goProd){goProd(1, this)};" href="http://www.yunyun.com/Search.php?q=ios7.1">网页</a><a href="http://weibo.yunyun.com/Weibo.php?q=ios7.1" class="current" onclick="return false;">微博</a><a onmousedown="if(goProd){goProd(3, this)};" href="http://image.yunyun.com/Image.php?q=ios7.1">图片</a>    </span>
+    <span class="fr person">
+      <span class="fr profilearea" id="header_login" style="display: none; ">
+          <a href=""><i><font color="#FFFFFF" id="header_login_name"></font></i></a>
+          <a style="margin-left:26px;color:#AAA" href="https://passport.yunyun.com/Logout.php?rd=http%3A%2F%2Fweibo.yunyun.com%2FWeibo.php%3Fp%3D22%26q%3Dios7.1">退出</a>
+      </span>
+      <span class="fr" id="header_nologin"><a href="https://passport.yunyun.com/Login.php?rd=http%3A%2F%2Fweibo.yunyun.com%2FWeibo.php%3Fp%3D22%26q%3Dios7.1" id="login">登录</a>
+      </span>
+    </span>
+</div>
+<script type="text/javascript">
+execOnLoad('header_module', function() {
+  createHeaderProfile();
+});
+</script>
+    </div>
+  </div>
+  <div id="yy_hd_s" style="position:relative;">
+    <div class="inner">
+      <div class="clearfix">
+        <div class="fl" id="logo"><a href="http://weibo.yunyun.com/Weibo.php"><i>yunyun.com</i></a></div>
+        <div class="fl t_search relative">
+          <div class="t_search_bd">
+            <input type="text" class="t_search_input" autocomplete="off" name="search_input_text" id="search_input_text_header" maxlength="128" aria-haspopup="true"><i class="s_btn"><input type="button" class="t_search_btn" value="&nbsp;" onclick="searchSubmit();"></i>
+          </div>
+        </div>
+      </div>
+      <div class="blk5"></div>
+      <div id="tabContainer" class="tab_stats" style="display:none"></div>
+      <div class="blk5"></div>
+    </div>
+  </div>
+  <div class="hd_shadow" id="head_inner_shadow" style="display: none; "></div>
+</div>
+  <div class="landing_guide" id="yr_landing_guide" style="display: block; left: 684px; top: 25px; ">
+    <div class="tp"></div>
+    <div class="bd"><a class="b_link" href="https://passport.yunyun.com/Login.php?rd=http%3A%2F%2Fweibo.yunyun.com%2FWeibo.php%3Fp%3D22%26q%3Dios7.1"></a></div>
+    <a class="g_close" href="javascript:void(0);"><i class="ico_g_close"></i></a>
+  </div>
+  <script type="text/javascript">
+    execOnLoad('landingguide_module', function() {
+      createLoginGuide('yr_landing_guide', 'login');
+    });
+  </script>
+<script type="text/javascript">
+var searchSubmit = function(logType) {
+  var query = _yrE('search_input_text_header').value.replace(/(^\s*)|(\s*$)/g, '');
+          execOnLoad('util_module', function() {
+        window.location = searchProd(query, 2, logType).toString();
+      });
+    };
+var suggSearchSubmit = function() {
+  return searchSubmit(2);
+}
+</script>
+<script type="text/javascript">
+execOnLoad('util_module', function() {
+  InitHeadBar();
+});
+execOnLoad('suggestion_list_module', function() {
+  decorateSearchSuggestion(_yrE('search_input_text_header'), suggSearchSubmit);
+});
+</script>
+<div class="bd_shadow">
+<style>
+.bd_shadow {background-image:none;}
+.bd_bg_white {border-top:1px solid #e6e6e6}
+</style>
+<div id="yy_bd">
+<div class="wb_s_hd">
+  <div class="fr">
+    <div class="gray fl wb_result">
+      <span id="searchResultNumber">约 25,200 个结果</span>
+    </div>
+<div class="s_wb_from fl" id="wb_fr">
+        <a href="javascript:void(0)" id="curr_site" class="f_wb_tit">来自所有微博<i class="ico_arrow_wb"></i></a>
+        <div class="f_wb_list" id="f_wb_list" style="display:none">
+          <ul>
+            <li><a href="/Weibo.php?p=22&amp;q=site%3Aweibo.com+ios7.1"><i class="ico_sina"></i>新浪微博</a></li>
+            <li><a href="/Weibo.php?p=22&amp;q=site%3At.qq.com+ios7.1"><i class="ico_qq"></i>腾讯微博</a></li>
+            <li><a href="/Weibo.php?p=22&amp;q=site%3At.163.com+ios7.1"><i class="ico_wangyi"></i>网易微博</a></li>
+            <li><a href="/Weibo.php?p=22&amp;q=site%3At.sohu.com+ios7.1"><i class="ico_sohu"></i>搜狐微博</a></li>
+          </ul>
+        </div>
+      </div>
+<script>
+var curr_site_over = 0;
+var list_site_over = 0;
+_yrE('curr_site').onmouseover = function () { curr_site_over = 1; _yrE('f_wb_list').style.display = ''; };
+_yrE('f_wb_list').onmouseover = function() { list_site_over = 1;if (_yrE('f_wb_list').style.display == 'none') _yrE('f_wb_list').style.display = '';};
+_yrE('curr_site').onmouseout = function() { curr_site_over = 0; setTimeout(" if (!list_site_over && !curr_site_over) _yrE('f_wb_list').style.display = 'none';", 1000);};
+_yrE('f_wb_list').onmouseout = function() { list_site_over = 0; setTimeout(" if (!list_site_over && !curr_site_over) _yrE('f_wb_list').style.display = 'none';", 1000);};
+</script>
+    <div class="s_wb_ord fl"><a href="http://weibo.yunyun.com/Weibo.php?q=ios7.1&amp;srt=mb&amp;nut=0&amp;wbts=0" class="s_wb_defult   current">默认排序</a><a href="http://weibo.yunyun.com/Weibo.php?q=ios7.1&amp;srt=mb&amp;nut=0&amp;wbts=1" class="s_wb_time ">时间排序</a></div>
+    </div>
+    <div class="fl wb_s_tab">
+      <a href="http://weibo.yunyun.com/Weibo.php?q=ios7.1&amp;srt=mb&amp;nut=0&amp;mfltt=0" class="current">所有结果</a>
+      <a href="https://passport.yunyun.com/Login.php?rd=http%3A%2F%2Fweibo.yunyun.com%2FWeibo.php%3Fq%3Dios7.1%26srt%3Dmb%26nut%3D0%26mfltt%3D2">我关注的</a>
+      <a href="http://weibo.yunyun.com/Weibo.php?q=ios7.1&amp;srt=mb&amp;nut=0&amp;mfltt=3">搜索用户</a>
+    </div>
+    <div class="clearfix"></div>
+  </div>
+  <div class="bd_bg_white clearfix padding_L20">
+    <div class="col w660 fl wb_search_box">
+    <div class="s_results min_height500">
+      <div class="blk15"></div>
+      <div id="searchtabContainer"><div class="isolated_result"><div style="display: none; "></div><div style="display: none; "></div><div><div class="s_microblog"><div class="m_user_pic w80 fl"><a href="http://weibo.com/1645596452" target="_blank" onmousedown="sclick(this, 'http://weibo.com/1645596452', '210,mb,5990474456120665474,0', 14)" onmouseover="_yrExternalCard(this, '-5678863222857862788')"><img src="http://tp1.sinaimg.cn/1645596452/50/22866592514/1"></a></div><div class="s_microblog_con w538 fl"><p class="f15"><a href="http://weibo.com/1645596452" class="f15" target="_blank" onmousedown="sclick(this, 'http://weibo.com/1645596452', '210,mb,5990474456120665474,0', 15)" onmouseover="_yrExternalCard(this, '-5678863222857862788')">91门户</a><i class="ico_per_cert"></i>：【越狱也无用 国行5s/5c升级4G需看<em>iOS 7.1</em>】苹果日前表示，目前只有港版iPhone5s和iPhone5c可以升级到4G。而国行iPhone5s/c即使越狱也无法使用4G。此外，有消息称，新出的<em>iOS7.1</em>正式版将使用户无需破解也能够轻松使用上4G网络。其中包括国行iPhone5s/c。详情&gt;&gt;&gt;<a href="http://iphone.91.com/news/jrrd/140106/21643890.html" target="_blank" mt="url" onmouseover="if(attachShortLink)attachShortLink(this, '-1870745619850463508')" onmousedown="sclick(this, 'http://iphone.91.com/news/jrrd/140106/21643890.html', &quot;0,mb,5990474456120665474,0&quot;, 26)">http://t.cn/8ksnDzb</a>
+</p><div class="blk5"></div><div class="q_imgs" id=":6.oi"><div><div class="imageWallinline" id=":a.il"><div class="q_img"><img src="http://ww3.sinaimg.cn/bmiddle/6215cf24jw1eca7vh2ka0j20fa09kwev.jpg" id=":a.imgs0" style="width:164px"><span style="display:none; " class="img_s" id=":a.tt"></span></div></div><div id=":a.et" style="display:none;" class="imageWallExtend"><img src="http://ww3.sinaimg.cn/bmiddle/6215cf24jw1eca7vh2ka0j20fa09kwev.jpg"><br></div></div></div><div class="reply_wrap clearfix"><div class="blk10"></div><div><span class="fr feed_item_r"><span><a id=":6.tr" href="javascript:void(0);">转发&nbsp;80</a></span><span class="space_line">|</span><span><a id=":6.ts" href="javascript:void(0);">分享<i id=":6.is" class="icon_share"></i></a></span><span class="space_line">|</span><span><a href="http://weibo.com/1645596452/AqNNF4cgZ?type=comment" target="_blank" onmousedown="sclick(this, 'http://weibo.com/1645596452/AqNNF4cgZ?type=comment', '210,mb,5990474456120665474,0', 22)">评论&nbsp;0</a></span></span><span class="web_url"><span class="time padding_R10"><a id="0.ts" title="2014-01-06 23:00" href="http://weibo.com/1645596452/AqNNF4cgZ" target="_blank" onmousedown="sclick(this, 'http://weibo.com/1645596452/AqNNF4cgZ', '210,mb,5990474456120665474,0', 16)">2014-01-06</a></span><i class="ico_sina"></i>新浪微博</span></div><div id=":6.t" class="reply_lst_wrap relative" style="display:none;"><div id=":6.ta" class="t_position"></div><div id=":6.tc"></div></div></div></div></div><div class="line_dashed"></div><div class="s_microblog"><div class="m_user_pic w80 fl"><a href="http://weibo.com/2480678791" target="_blank" onmousedown="sclick(this, 'http://weibo.com/2480678791', '211,mb,5990474456120665474,1', 14)" onmouseover="_yrExternalCard(this, '8671905977164991534')"><img src="http://tp4.sinaimg.cn/2480678791/50/5685095790/1"></a></div><div class="s_microblog_con w538 fl"><p class="f15"><a href="http://weibo.com/2480678791" class="f15" target="_blank" onmousedown="sclick(this, 'http://weibo.com/2480678791', '211,mb,5990474456120665474,1', 15)" onmouseover="_yrExternalCard(this, '8671905977164991534')">Hackl0us</a><i class="ico_per_cert"></i>：
+<a href="http://weibo.com/k/iOS7.1+beta5&amp;refer=miniblog_jing" target="_blank" mt="url" onmousedown="sclick(this, 'http://weibo.com/k/iOS7.1+beta5&amp;refer=miniblog_jing', &quot;1,mb,5990474456120665474,1&quot;, 25)">#<em>iOS7.1</em> beta5#</a>将于 北京时间2014年4月14日 8:00:01过期。7.1正式版应该不远咯。这个版本是所有<em>iOS 7.1</em>测试版本中安全性最最高的一个。</p><div class="blk5"></div><div class="reply_lst_wrap relative clearfix"><div class="t_position" style="left:35px;"></div><p class="f14 reply_con"><a href="http://weibo.com/3968334187/AveB21AbZ" target="_blank" onmousedown="sclick(this, 'http://weibo.com/3968334187/AveB21AbZ', '211,mb,5990474456120665474,1')">@App1eDNA</a>：
+<em>ios 7.1</em> beta5(11d5145e)发布。</p></div><div class="reply_wrap clearfix"><div class="blk10"></div><div><span class="fr feed_item_r"><span><a id=":8.tr" href="javascript:void(0);">转发&nbsp;5</a></span><span class="space_line">|</span><span><a id=":8.ts" href="javascript:void(0);">分享<i id=":8.is" class="icon_share"></i></a></span><span class="space_line">|</span><span><a href="http://weibo.com/2480678791/AvgANCmVi?type=comment" target="_blank" onmousedown="sclick(this, 'http://weibo.com/2480678791/AvgANCmVi?type=comment', '211,mb,5990474456120665474,1', 22)">评论&nbsp;9</a></span></span><span class="web_url"><span class="time padding_R10"><a id="2.ts" title="2014-02-05 07:39" href="http://weibo.com/2480678791/AvgANCmVi" target="_blank" onmousedown="sclick(this, 'http://weibo.com/2480678791/AvgANCmVi', '211,mb,5990474456120665474,1', 16)">2014-02-05</a></span><i class="ico_sina"></i>新浪微博</span></div><div id=":8.t" class="reply_lst_wrap relative" style="display:none;"><div id=":8.ta" class="t_position"></div><div id=":8.tc"></div></div></div></div></div><div class="line_dashed"></div></div><div style="display: none; "></div><div class="page" style=""><a id=":0.pre" style="" class="previous" href="javascript:void(0);">上一页</a><a id=":0.0" style="" href="javascript:void(0);">13</a><a id=":0.1" href="javascript:void(0);">14</a><a id=":0.2" style="" href="javascript:void(0);">15</a><a id=":0.3" style="" href="javascript:void(0);">16</a><a id=":0.4" style="" href="javascript:void(0);">17</a><a id=":0.5" style="" href="javascript:void(0);">18</a><a id=":0.6" style="" href="javascript:void(0);">19</a><a id=":0.7" style="" href="javascript:void(0);">20</a><a id=":0.8" style="" href="javascript:void(0);">21</a><span id=":0.9">22</span><a id=":0.10" style="display: none; "></a><a id=":0.11" style="display: none; "></a><a id=":0.12" style="display: none; "></a><a id=":0.13" style="display: none; "></a><a id=":0.14" style="display: none; "></a><a id=":0.next" style="display: none; " class="next">下一页</a></div><div style="display: none; "></div></div></div>
+                </div>
+            <div class="blk20"></div>
+<div class="column_tit">相关搜索</div>
+<div class="keywords">
+  <table width="0" border="0" cellspacing="0" cellpadding="0">
+    <tbody>
+<tr><td><a href="http://weibo.yunyun.com/Weibo.php?q=7.8%EF%BC%8B3%EF%BC%9D%E5%A4%9A%E5%B0%91&amp;srt=mb&amp;nut=0&amp;lgt=1">7.8＋3＝多少</a></td><td><a href="http://weibo.yunyun.com/Weibo.php?q=%E5%AE%BF%E8%BF%811%E5%8F%B7%E5%88%B07%E5%8F%B7%E5%A4%9A%E5%B0%91%E5%BA%A6&amp;srt=mb&amp;nut=0&amp;lgt=1">宿迁1号到7号多少度</a></td><td><a href="http://weibo.yunyun.com/Weibo.php?q=7%E9%BE%99%E7%8F%A0%E7%AC%AC1%E9%83%A8%E5%9B%BD%E8%AF%AD%E9%AB%98%E6%B8%85&amp;srt=mb&amp;nut=0&amp;lgt=1">7龙珠第1部国语高清</a></td><td><a href="http://weibo.yunyun.com/Weibo.php?q=7%E9%BE%99%E7%8F%A0%E7%AC%AC1%E9%83%A8%E5%85%A8%E9%9B%86&amp;srt=mb&amp;nut=0&amp;lgt=1">7龙珠第1部全集</a></td></tr><tr><td><a href="http://weibo.yunyun.com/Weibo.php?q=7%E9%BE%99%E7%8F%A0%E7%AC%AC1%E9%83%A8%E5%9B%BD%E8%AF%AD&amp;srt=mb&amp;nut=0&amp;lgt=1">7龙珠第1部国语</a></td><td><a href="http://weibo.yunyun.com/Weibo.php?q=7%E9%BE%99%E7%8F%A0%E7%AC%AC1%E9%83%A8%E5%9B%BD%E8%AF%AD%E5%85%A8%E9%9B%86&amp;srt=mb&amp;nut=0&amp;lgt=1">7龙珠第1部国语全集</a></td><td><a href="http://weibo.yunyun.com/Weibo.php?q=7%E9%BE%99%E7%8F%A0%E7%AC%AC1%E9%83%A8%E5%85%A8%E9%9B%86%E5%9B%BD%E8%AF%AD&amp;srt=mb&amp;nut=0&amp;lgt=1">7龙珠第1部全集国语</a></td><td><a href="http://weibo.yunyun.com/Weibo.php?q=%E8%88%8C%E5%B0%96%E4%B8%8A%E7%9A%84%E4%B8%AD%E5%9B%BD1%EF%BC%8D7%E8%A7%86%E9%A2%91&amp;srt=mb&amp;nut=0&amp;lgt=1">舌尖上的中国1－7视频</a></td></tr>    </tbody>
+  </table>
+</div>
+    </div>
+    <div class="col w280 fr bg">
+      <div class="blk10"></div>
+      <div class="padding_LR20" style="border-left:1px solid #ddd; padding-left:19px;">
+                <div class="s_hot">
+          <div id="searchHotMBlogKeywordTabs"><div><div class="hotSearch"><b>微博热门话题</b><div class="blk10"></div><div class="wb_hot_topic"><ul class="titUL"><li id=":c.tb8" class="hover"><a href="javascript:void(0);">实时</a></li><li id=":c.tb1"><a href="javascript:void(0);">观点</a></li><li id=":c.tb2"><a href="javascript:void(0);">娱乐</a></li><li id=":c.tb4"><a href="javascript:void(0);">科技</a></li></ul><div class="blk5"></div><div id=":c.tcc"><ul><li><p><span class="total">6</span><a href="http://weibo.yunyun.com/Weibo.php?q=%E6%9B%BF%E9%A2%86%E5%AF%BC%E7%9C%8B%E7%BD%91%E7%BB%9C&amp;lgt=3" keyword="替领导看网络" title="替领导看网络 " alt="替领导看网络 ">替领导看网络 </a></p></li><li><p><span class="total">18900</span><a href="http://weibo.yunyun.com/Weibo.php?q=%E6%9D%8E%E5%BC%80%E5%A4%8D&amp;lgt=3" keyword="李开复 " title="李开复   " alt="李开复   ">李开复   </a></p></li><li><p><span class="total">8360</span><a href="http://weibo.yunyun.com/Weibo.php?q=%E6%99%8B%E6%B5%8E%E9%AB%98%E9%80%9F&amp;lgt=3" keyword="晋济高速" title="晋济高速" alt="晋济高速">晋济高速</a></p></li><li><p><span class="total">23700</span><a href="http://weibo.yunyun.com/Weibo.php?q=%E5%8C%BA%E4%BC%AF&amp;lgt=3" keyword="区伯" title="区伯" alt="区伯">区伯</a></p></li><li><p><span class="total">4180000</span><a href="http://weibo.yunyun.com/Weibo.php?q=mh370&amp;lgt=3" keyword="mh370" title="mh370" alt="mh370">mh370</a></p></li><li><p><span class="total">3420</span><a href="http://weibo.yunyun.com/Weibo.php?q=%E5%B9%BF%E5%B7%9E%E4%B8%80%E6%A8%A1&amp;lgt=3" keyword="广州一模" title="广州一模" alt="广州一模">广州一模</a></p></li><li><p><span class="total">48900</span><a href="http://weibo.yunyun.com/Weibo.php?q=%E5%A4%A9%E9%80%9A%E8%8B%91&amp;lgt=3" keyword="天通苑" title="天通苑" alt="天通苑">天通苑</a></p></li><li><p><span class="total">3150</span><a href="http://weibo.yunyun.com/Weibo.php?q=%E9%BE%99%E5%BE%B7%E5%B9%BF%E5%9C%BA&amp;lgt=3" keyword="龙德广场" title="龙德广场" alt="龙德广场">龙德广场</a></p></li><li><p><span class="total">6840</span><a href="http://weibo.yunyun.com/Weibo.php?q=%E9%92%93%E9%B1%BC%E5%B2%9B%E7%9C%9F%E7%9B%B8&amp;lgt=3" keyword="钓鱼岛真相" title="钓鱼岛真相" alt="钓鱼岛真相">钓鱼岛真相</a></p></li><li><p><span class="total">203000</span><a href="http://weibo.yunyun.com/Weibo.php?q=%E5%87%BB%E8%90%BD&amp;lgt=3" keyword="击落" title="击落" alt="击落">击落</a></p></li></ul></div></div><div class="blk25"></div></div></div></div>
+      </div>
+      <div class="padding_LR20" id="interested_search"></div>
+      <div id="ad_banner_blk"></div>
+          </div>
+  </div>
+</div>
+<div id="loading_image"></div>
+</div>
+<script>
+  var fetch_docid = '0';
+  var totalNum = '0';
+    execOnLoad('search_module',
+    function(){
+        var state = {q: "ios7.1",
+                srt: 'mb',
+                p: 22,
+                uid: ''};
+        displaySearchResult(_yrE('searchtabContainer'), state,
+            [[[[["http:\/\/weibo.com\/1645596452\/AqNNF4cgZ","91\u95e8\u6237","&#12304;&#36234;&#29425;&#20063;&#26080;&#29992; &#22269;&#34892;5s\/5c&#21319;&#32423;4G&#38656;&#30475;<em>iOS 7.1<\/em>&#12305;&#33529;&#26524;&#26085;&#21069;&#34920;&#31034;&#65292;&#30446;&#21069;&#21482;&#26377;&#28207;&#29256;iPhone5s&#21644;iPhone5c&#21487;&#20197;&#21319;&#32423;&#21040;4G&#12290;&#32780;&#22269;&#34892;iPhone5s\/c&#21363;&#20351;&#36234;&#29425;&#20063;&#26080;&#27861;&#20351;&#29992;4G&#12290;&#27492;&#22806;&#65292;&#26377;&#28040;&#24687;&#31216;&#65292;&#26032;&#20986;&#30340;<em>iOS7.1<\/em>&#27491;&#24335;&#29256;&#23558;&#20351;&#29992;&#25143;&#26080;&#38656;&#30772;&#35299;&#20063;&#33021;&#22815;&#36731;&#26494;&#20351;&#29992;&#19978;4G&#32593;&#32476;&#12290;&#20854;&#20013;&#21253;&#25324;&#22269;&#34892;iPhone5s\/c&#12290;&#35814;&#24773;&gt;&gt;&gt;<a href=\"http:\/\/iphone.91.com\/news\/jrrd\/140106\/21643890.html\" target=\"_blank\" mt=\"url\" onmouseover=\"if(attachShortLink)attachShortLink(this, '-1870745619850463508')\" onmousedown=\"sclick(this, 'http:\/\/iphone.91.com\/news\/jrrd\/140106\/21643890.html', &quot;0,mb,5990474456120665474,0&quot;, 26)\">http:\/\/t.cn\/8ksnDzb<\/a>\n",[["http:\/\/ww3.sinaimg.cn\/thumbnail\/6215cf24jw1eca7vh2ka0j20fa09kwev.jpg","http:\/\/ww3.sinaimg.cn\/bmiddle\/6215cf24jw1eca7vh2ka0j20fa09kwev.jpg","http:\/\/ww3.sinaimg.cn\/large\/6215cf24jw1eca7vh2ka0j20fa09kwev.jpg"]],"http:\/\/weibo.com\/1645596452",80,null,null,false,true,0],["","http:\/\/tp1.sinaimg.cn\/1645596452\/50\/22866592514\/1",0,null,"",""],1389020438,"http:\/\/weibo.com",null,null,null,"3540292189014980939",["3663879631000493",1,"-5678863222857862788"]],6,0],[[["http:\/\/weibo.com\/2480678791\/AvgANCmVi","Hackl0us","\n<a href=\"http:\/\/weibo.com\/k\/iOS7.1+beta5&amp;refer=miniblog_jing\" target=\"_blank\" mt=\"url\" onmousedown=\"sclick(this, 'http:\/\/weibo.com\/k\/iOS7.1+beta5&amp;refer=miniblog_jing', &quot;1,mb,5990474456120665474,1&quot;, 25)\">#<em>iOS7.1<\/em> beta5#<\/a>&#23558;&#20110; &#21271;&#20140;&#26102;&#38388;2014&#24180;4&#26376;14&#26085; 8:00:01&#36807;&#26399;&#12290;7.1&#27491;&#24335;&#29256;&#24212;&#35813;&#19981;&#36828;&#21679;&#12290;&#36825;&#20010;&#29256;&#26412;&#26159;&#25152;&#26377;<em>iOS 7.1<\/em>&#27979;&#35797;&#29256;&#26412;&#20013;&#23433;&#20840;&#24615;&#26368;&#26368;&#39640;&#30340;&#19968;&#20010;&#12290;",null,"http:\/\/weibo.com\/2480678791",5,9,null,false,true,0],["","http:\/\/tp4.sinaimg.cn\/2480678791\/50\/5685095790\/1",0,null,"",""],1391557189,"http:\/\/weibo.com",[["http:\/\/weibo.com\/3968334187\/AveB21AbZ","App1eDNA","\n<em>ios 7.1<\/em> beta5(11d5145e)&#21457;&#24067;&#12290;",null,"http:\/\/weibo.com\/3968334187",47,2,null,false,false,null],["","http:\/\/tp4.sinaimg.cn\/3968334187\/50\/5683905585\/1",0,null,"",""],null,null,null,null,null,null,null],[],null,"-7551326796214464518",["3674519539144584",1,"8671905977164991534"]],6,1]],[],25200,{"mb":212,"u":1},false,null,[null,null,null],[],"5990474456120665474",[],[],null,[],null]);
+        
+                createHotWeiboKeywordsView(_yrE('searchHotMBlogKeywordTabs'), "ios7.1", [[[8,"\u5b9e\u65f6",[["\u66ff\u9886\u5bfc\u770b\u7f51\u7edc","\u66ff\u9886\u5bfc\u770b\u7f51\u7edc ",6],["\u674e\u5f00\u590d ","\u674e\u5f00\u590d   ",18900],["\u664b\u6d4e\u9ad8\u901f","\u664b\u6d4e\u9ad8\u901f",8360],["\u533a\u4f2f","\u533a\u4f2f",23700],["mh370","mh370",4180000],["\u5e7f\u5dde\u4e00\u6a21","\u5e7f\u5dde\u4e00\u6a21",3420],["\u5929\u901a\u82d1","\u5929\u901a\u82d1",48900],["\u9f99\u5fb7\u5e7f\u573a","\u9f99\u5fb7\u5e7f\u573a",3150],["\u9493\u9c7c\u5c9b\u771f\u76f8","\u9493\u9c7c\u5c9b\u771f\u76f8",6840],["\u51fb\u843d","\u51fb\u843d",203000]]],[1,"\u89c2\u70b9",[["\u6052\u5929\u7136 \u8089\u6bd2\u6746\u83cc","\u6052\u5929\u7136\u6bd2\u5976\u7c89\u662f\u865a\u60ca\u4e00\u573a\uff1f",408000],["\u5c0f\u4fbf \u7fa4\u6bb4","\u4e00\u6ce1\u5c3f\u5f15\u53d1\u7684\u8840\u6848",2050],["\u7f8e\u56fd \u53d9\u5229\u4e9a","\u53d9\u5229\u4e9a\u5316\u6b66\u7591\u4e91",20900],["\u91d1\u97e9\u677e","\u91d1\u6b63\u6069\u4f84\u5b50\u5c06\u8d74\u6cd5\u7559\u5b66",2130],["\u4e2d\u77f3\u6cb9 \u9ad8\u7ba1","\u4e2d\u77f3\u6cb9\u52a8\u8361 \u9ad8\u7ba1\u8fde\u7eed\u88ab\u67e5",8990],["\u5927\u9ec4\u9e2d \u5317\u4eac","\u5927\u9ec4\u9e2d\u5728\u5317\u4eac",133000],["\u518d\u89c1\u9ea6\u8fea","\u518d\u89c1\u9ea6\u8fea \u518d\u89c1\u9752\u6625",5890],["\u62cd\u7167 \u5760\u5d16","\u4e0d\u4f5c\u6b7b\u5c31\u4e0d\u4f1a\u6b7b\uff1a\u5973\u9a74\u53cb\u62cd\u7167\u5760\u5d16",52],["\u6d3b\u8783\u87f9\u81ea\u52a8\u552e\u8d27\u673a","\u9ad8\u7aef\u5927\u6c14\u4e0a\u6863\u6b21 \u6d3b\u8783\u87f9\u81ea\u52a8\u552e\u8d27\u673a",3950],["\u8865\u9499 \u75d4\u75ae","\u6709\u75d4\u4e0d\u5728\u5e74\u9ad8 2\u5c81\u5b9d\u5b9d\u957f\u75d4\u75ae",1500]]],[2,"\u5a31\u4e50",[["\u4e61\u6751\u7231\u60c5  \u7ae0\u5b50\u6021","\u7ae0\u5b50\u6021\u52a0\u76df\u4e61\u6751\u7231\u60c5\uff1f",58],["\u5f20\u56fd\u7acb \u534e\u8c0a","\u5f20\u56fd\u7acb\u5929\u4ef7\u52a0\u76df\u534e\u8c0a",1380],["\u300a\u8d64\u9053\u300b","\u5927\u660e\u661f\u4e91\u96c6\u300a\u8d64\u9053\u300b",1970],["\u718a\u9edb\u6797 \u5929\u738b\u5ac2","\u718a\u9edb\u6797\u201c\u8fc7\u6c14\u201d\u5929\u738b\u5ac2",88],["\u9ec4\u6e24  \u5f90\u5ce5","\u9ec4\u6e24\u5f90\u5ce5\u643a\u624b\u66b4\u8d70\u559c\u5267\t\t\u9ec4\u6e24  \u5f90\u5ce5",2440],["\u7530\u6734\u73fa \u7537\u95fa\u871c","\u7530\u6734\u73fa\uff1a\u6211\u7684\u7537\u95fa\u871c",1560],["ella  \u597d\u58f0\u97f3","Ella\uff1a\u6211\u662f\u4e13\u4e1a\u7684",8430],["\u597d\u58f0\u97f3 \u6bd5\u590f","\u7537\u7bee\uff1a\u6bd5\u590f\u6c42\u4ea4\u5f80",10],["\u9648\u5c0f\u6625 \u7231\u5b50","\u9648\u5c0f\u6625\u6652\u7231\u5b50\u6b63\u9762\u7167",2690],["\u5317\u5f71 \u65b0\u751f","\u53c8\u662f\u4e00\u5927\u6ce2\u9753\u5973\u4fca\u7537",4330]]],[4,"\u79d1\u6280",[["\u963f\u91cc\u5408\u4f19\u4eba","\u963f\u91cc\u201c\u5408\u4f19\u4eba\u201d\u771f\u76f8",7500],["iPhone 5S\u53d1\u5e03\u4f1a","\u65b0\u4e00\u4ee3iPhone\u53d1\u5e03\u5927\u4f1a",22300],["ATM\u673a\u201c\u547c\u547c\u201d","\u795e\u79d8ATM\u673a\u201c\u547c\u547c\u201d\u58f0",1860],["\u5c0f\u7c73\u5e73\u677f","\u5c0f\u7c73\u5e73\u677f\u771f\u673a\u66dd\u5149",78300],["\u7231\u5947\u827a\u4e92\u8054\u7f51\u7535\u89c6","\u7231\u5947\u827a\u7535\u89c6\u6b63\u5f0f\u53d1\u5e03",6560],["\u773c\u955c\u4e0a\u7684\u8c37\u6b4c\u773c\u955c","\u773c\u955c\u4e0a\u7684\u8c37\u6b4c\u773c\u955c",11000],["\u767e\u5ea6\u8bc9360","\u767e\u5ea6\u518d\u8bc9\u5947\u864e360",85],["Nexus 5","Nexus 5\u771f\u673a\u9996\u66dd\u5149",53300],["\u5fae\u8f6f \u8bfa\u57fa\u4e9a","\u5fae\u8f6f\u6536\u8d2d\u8bfa\u57fa\u4e9a",1430000],["\u4f59\u627f\u4e1c \u8bfa\u57fa\u4e9a","\u4f59\u627f\u4e1c\u6405\u5c40\u6536\u8d2d\u8bfa\u57fa\u4e9a",8250]]]],8,5990474456120665474]);
+  });
+  //预加载模块
+  _yrPreloadModules(['util_module']);
+</script>
+</div>
+<div id="yy_ft">
+  <div class="blk20"></div>
+  <div class="tc">
+      <a href="http://www.yunyun.com">主页</a>
+      <a href="http://ads.yunyun.com/" target="_blank">移动广告</a>
+      <a href="http://www.yunyun.com/SiteInfo.php?r=privacy">隐私声明</a>
+      <a href="http://www.yunyun.com/SiteInfo.php?r=job">加入我们</a>
+      <a href="http://www.yunyun.com/SiteInfo.php?r=about">关于云云</a>
+      <br>
+      <a href="http://www.miibeian.gov.cn/" target="_blank">京ICP证110695号</a>
+      <span>©2014 云云</span>
+  </div>
+  <div class="blk30"></div>
+</div>
+</div><script src="http://code.jquery.com/jquery-1.11.0.min.js"></script></body>

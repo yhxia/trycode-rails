@@ -73,3 +73,5 @@ end
 gem 'haml-rails'
 
 gem 'phantomjs'
+gem 'hpricot'
+gem 'mysql2'

@@ -49,35 +49,7 @@ class SitewatchPagesController < ApplicationController
     ]
 
     # posts
-    @posts1 = {
-      :id => "posts1",
-      :title => "Of a confirming statemen",
-      :time => "10/27/13 07:55 AM PDT",
-      :site => "OS X Mavericks",
-      :author => "MrHoffman",
-      :content => "In the absence of a confirming statement from the vendor (and unless you get lucky with somebody else around here that has this particular mult-function printer), you can install Mavericks on an external USB disk (either a fresh install, or clone your current boot disk and upgrade that), boot that external disk, and test.",
-      :attitude => 1,
-      :comment => "",
-      :radar => "rdar://problems/1534315"
-    }
-
-    @posts2 = {
-      :id => "posts2",
-      :title => "Of a confirming statemen",
-      :time => "10/27/13 07:55 AM PDT",
-      :site => "OS X Mavericks",
-      :author => "MrHoffman",
-      :content => "In the absence of a confirming statement from the vendor (and unless you get lucky with somebody else around here that has this particular mult-function printer), you can install Mavericks on an external USB disk (either a fresh install, or clone your current boot disk and upgrade that), boot that external disk, and test.",
-      :attitude => 3,
-      :comment => "To do.",
-      :radar => "rdar://problems/1235633"
-    }
-
-    @posts_list = 
-    [
-      @posts1,
-      @posts2
-    ]
+    @posts_list = Post.limit(10)
 
   end
 
