@@ -49,7 +49,59 @@ class SitewatchPagesController < ApplicationController
     ]
 
     # posts
-    @posts_list = Post.limit(10)
+
+    @root = "?page="
+
+    if params[:page].blank?
+      params[:page]=1
+    end
+
+    @posts_list = Post.order(time: :desc).paginate(:page => params[:page], :per_page => 10)
+
+    current_i = @posts_list.current_page
+    total_p = @posts_list.total_pages
+
+    @first_url = @root + 1.to_s
+    @last_url = @root + @posts_list.total_pages.to_s
+
+    @prev_url = @root + (current_i-1).to_s if current_i > 1
+    @next_url = @root + (current_i+1).to_s if current_i < total_p
+
+    @url1 = 1
+    if 1<=current_i && current_i<=total_p
+      if current_i <= 2
+        @url1 = 1
+      elsif current_i >= total_p - 1
+        @url1 = total_p - 4
+      else
+        @url1 = current_i - 2
+      end
+    end
+
+    @nav_url_list = [
+      # [@root+1.to_s,1,true],
+      # [@root+2.to_s,2,false],
+      # [@root+3.to_s,3,false],
+      # [@root+4.to_s,4,false],
+      # [@root+5.to_s,5,false]
+    ]
+
+    to_page_range = 4
+    if total_p<5
+      to_page_range = total_p - 1
+    end
+
+    (0..to_page_range).each do |eachi|
+      each_arr = []
+      each_arr.append(@root + (@url1+eachi).to_s)
+      each_arr.append(@url1+eachi)
+      is_span = false
+      if @url1+eachi == current_i
+        is_span = true
+      end
+      each_arr.append(is_span)
+      @nav_url_list.append(each_arr)
+    end
 
   end
 

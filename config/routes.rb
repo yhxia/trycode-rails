@@ -5,6 +5,8 @@ Uview20140227::Application.routes.draw do
   
   #sitewatch_pages
   match '/sitewatch', to: 'sitewatch_pages#home', via: 'get'
+
+  resources :posts, :path=>"/sitewatch/posts"
   
   #report_pages
   match '/report', to: 'report_pages#home', via: 'get'

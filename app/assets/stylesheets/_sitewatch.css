@@ -11234,7 +11234,8 @@ ul.controls li.pages {
 ul.controls li.pages a, ul.controls li.pages span {
 	display:block;
 	float:left;
-	width:16px;
+	/*width:16px;*/
+    margin: 0px 2px;
 	height:16px;
 	text-align:center;
 	line-height:16px;

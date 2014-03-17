@@ -14,10 +14,10 @@ class YunyunScraper
 
   def initialize
     ActiveRecord::Base.establish_connection(
-    :adapter  => 'mysql2',
-    :database => 'userview_test',
-    :username => 'root',
-    :host     => 'localhost')
+      :adapter  => 'mysql2',
+      :database => 'userview_test',
+      :username => 'root',
+      :host     => 'localhost')
   end
 
   # Downloader core
@@ -33,7 +33,7 @@ class YunyunScraper
       arr = []
         # call outside file
         jspath =  File.dirname(__FILE__) + "/phantomjs_caller.js"
-        Phantomjs.run(jspath,argUrl) do |line|
+        Phantomjs.run(jspath,argUrl,"--proxy=66.86.108.61:24155") do |line|
           if line[/\w+/]!='Unsafe' && line!="\n"
             arr<<line
           end
@@ -68,7 +68,7 @@ class YunyunScraper
     puts "Starting Yunyun Crawler..."
 
     url_list.each do |eachurl|
-      save_path = save_root+ "/" +eachurl.split("/")[-1].split("?")[-1]+post_fix
+      save_path = save_root + eachurl.split("/")[-1].split("?")[-1] + post_fix
       puts "\e[32m[Downloader] Processing " + eachurl + "...\e[0m"
       if File.exists?(save_path)
         puts "'"+save_path+"' already existed! Skip..."
@@ -78,12 +78,15 @@ class YunyunScraper
       lines = fetchContentByPhantomjs(eachurl)
       if lines.length<100
         puts "\e[31m[Downloader] Contents less than 100 lines! Break...\e[0m"
-        break
+        puts lines.join("").to_s
+        return false
       end
 
       File.open(save_path, 'w') {|f| f.write(lines.join("")) }
       sleep(sleep_second)
     end
+
+    return true
   end
 
   # Parser
@@ -99,8 +102,6 @@ class YunyunScraper
           next
         end
         puts "\e[32m[Parser] Hpricot success! Doc length = "+ doc.to_s.length.to_s+"\e[0m"        
-
-        
 
         (doc/"div.s_microblog").each_with_index do |microblog,index|
           post=[]
@@ -184,24 +185,59 @@ if __FILE__ == $0 # ruby yunyun.rb
 
   scraper = YunyunScraper.new
 
-  from = 1 
-  to = 22 #[1,22]
-  keyword = "ios7.1"
+  keywordMatrix  = [
+    # [1, 30, "iOS 7.1"],
+    # [1, 30, "Siri"],
+    # [1, 10, "iOS Siri"],
+    # [1, 10, "7.1 Siri"],
+    # [1, 10, "iPhone Siri"],
+    # [1, 10, "iPad Siri"],
+    # [1, 30, "7.1 升级"],
+
+    # [1, 20, "7.1 输入法"],
+    # [1, 20, "7.1 耗电"],
+    # [1, 20, "7.1 费电"],
+    # [1, 20, "7.1 电池"],
+    # [1, 10, "7.1 反应"],
+    # [1, 10, "7.1 性能"],
+    # [1, 30, "7.1 快"],
+    # [1, 20, "7.1 慢"],
+    # [1, 10, "7.1 崩溃"],
+    [6, 20, "7.1 界面"]
+  ]
+
+  # from = 1 
+  # to = 22 #[1,22]
+  # keyword = "ios7.1"
+
   post_fix = "_"+Time.now.to_s.split(" ").join("_")
   save_root = "rawdata/"
-  sleep_second = 2
+  sleep_second = 0
+  url_list = []
 
-  # url_list = scraper.constructStartList(from,to,keyword)
+  # keywordMatrix.each do |from, to,keyword|
+  #   url_list += scraper.constructStartList(from,to,keyword)
+  # end
 
-  # scraper.downloader( url_list , save_root, post_fix, sleep_second) # url, dir, post_fix, sleep_second
+
+  # while true do
+  #   if scraper.downloader( url_list , save_root, post_fix, sleep_second) # url, dir, post_fix, sleep_second
+  #     break
+  #   end
+  #   sleep(10)
+  # end
 
   file_list = Dir.glob("rawdata/*")
 
-  postData = scraper.parser(file_list)
+  file_list.each do |file|
+    fileArr = []
+    fileArr.append(file)
+    postData = scraper.parser(fileArr)
 
-  scraper.saveData(postData)
+    scraper.saveData(postData)
 
-  puts "\nTotal posts: "+postData.length.to_s
+    puts "\nTotal posts: "+postData.length.to_s
+  end
 
   puts "Finished."
 end

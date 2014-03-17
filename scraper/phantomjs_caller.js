@@ -2,6 +2,8 @@
 //return the document element that have already been analysed
 
 var page = require('webpage').create();
+// console.log('The default user agent is ' + page.settings.userAgent);
+page.settings.userAgent = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/33.0.1750.149 Safari/537.36';
 
 page.onConsoleMessage = function(msg) {
     console.log(msg);

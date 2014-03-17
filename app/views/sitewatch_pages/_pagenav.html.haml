@@ -4,16 +4,22 @@
   %li.rt
     %ul.controls
       %li.first
-        %a.first &lt;&lt;
+        %a.first{:href=>"#{@first_url}"} &lt;&lt;
+
       %li.prev
-        %a.prev &lt;
+        %a.prev{:href=>"#{@prev_url}"} &lt;
+
       %li.pages
-        %span 1
-        %a 2
-        %a 3
-        %a 4
-        %a 5
+        -@nav_url_list.each do |url,text,is_span|
+          -if is_span == true
+            %span
+              = text
+          -else
+            %a{:href=>"#{url}"}
+              = text
+
       %li.next
-        %a &gt;
+        %a{:href=>"#{@next_url}"} &gt;
+
       %li.last
-        %a &gt;&gt;
+        %a{:href=>"#{@last_url}"}&gt;&gt;

@@ -1,0 +1,47 @@
+-@posts_list.each do |post|
+  .jive-thread-post
+    %a
+    .jive-thread-post-body
+      /content [done]
+      %form.mark-form
+        .jive-thread-post-body-container
+          
+          .jive-thread-post-subject
+            .jive-thread-post-subject-content
+              %h2
+                %a{:href => "#{post[:post_url]}", :target=>"_blank"}
+                  =post[:title]
+              %h3 
+                =Time.at(post[:time]).to_s + " on" 
+                %a{:href => "#{post[:site]}", :target=>"_blank"} 
+                  =post[:site].split("://")[1]
+                by 
+                %a{:href => "#{post[:author_url]}", :target=>"_blank"} 
+                  =post[:author]
+          .jive-thread-post-message
+            .jive-rendered-content
+              %p
+                =post[:content]
+      
+      /custom userview bar [done. still need use js to manipulate]
+      .post-footer
+        %ul.issues
+          .row#userview-custom-bar
+            =button_tag 'Add to report »', class: "btn btn-xs pull-right btn-primary", disabled: post[:uv_attitude].to_i<2
+            .col-lg-3.pull-right
+              =text_field_tag 'radarinput', post[:uv_radar], placeholder: 'rdar://...', class: "form-control input-sm"
+            .col-lg-3.pull-right
+              =text_field_tag 'commentinput', post[:uv_comment], placeholder: 'comment...', class: "form-control input-sm"
+            .row.pull-right
+              %label.radio-inline.pull-left
+                =radio_button_tag post[:id], 'unrelated', post[:uv_attitude].to_i==1
+                %span.label.label-default Unrelated
+              %label.radio-inline.pull-left
+                =radio_button_tag post[:id], 'positive', post[:uv_attitude].to_i==2
+                %span.label.label-success Positive
+              %label.radio-inline.pull-left
+                =radio_button_tag post[:id], 'neutral', post[:uv_attitude].to_i==3
+                %span.label.label-info Neutral
+              %label.radio-inline.pull-left
+                =radio_button_tag post[:id], 'negative', post[:uv_attitude].to_i==4
+                %span.label.label-danger Negative

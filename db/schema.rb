@@ -11,14 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140313090031) do
+ActiveRecord::Schema.define(version: 20140316153718) do
 
   create_table "posts", force: true do |t|
     t.string   "title"
     t.datetime "time"
     t.string   "site"
     t.string   "author"
-    t.string   "content"
+    t.text     "content"
     t.string   "author_url"
     t.string   "post_url"
     t.integer  "uv_attitude"
