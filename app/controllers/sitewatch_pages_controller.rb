@@ -16,11 +16,11 @@ class SitewatchPagesController < ApplicationController
 
     @attitude_list = ["Positive", "Neutral", "Negative"].to_json
 
-    @saw_list = ["True", "False"].to_json
+    @reviewed_list = ["True", "False"].to_json
 
     @marked_list = ["True", "False"].to_json
 
-    @order_list = ["Latest", "Related"].to_json
+    @order_list = ["Latest", "Oldest"].to_json
 
     @filter_list = 
     [
@@ -30,51 +30,78 @@ class SitewatchPagesController < ApplicationController
       ["Related", @related_list],
       ["Site", @site_list],
       ["Attitude", @attitude_list],
-      ["Saw", @saw_list],
+      ["Reviewed", @reviewed_list],
       ["Marked", @marked_list],
       ["Order", @order_list]
     ]
 
     @conditions_list = 
     [
-      ["Project","iOS"],
-      ["Project","iPhone"],
-      ["From","Feb 10th"],
-      ["To","Mar 7th"],
-      ["Related","True"],
-      ["Site","Yunyun"],
-      ["Saw","False"],
-      ["Marked","False"],
-      ["Order","Latest"]
+      # ["Project","iOS"],
+      # ["Project","iPhone"],
+      # ["From","Feb 10th"],
+      # ["To","Mar 7th"],
+      # ["Related","True"],
+      # ["Site","Yunyun"],
+      # ["Reviewed","False"],
+      # ["Marked","False"],
+      # ["Order","Latest"]
     ]
 
-    # posts
+    #### posts ####
+    postfix = ""
 
-    @root = "?page="
-
-    if params[:page].blank?
-      params[:page]=1
+    # paginate
+    page_root = "?p="
+    params[:p] = 1 if params[:p].blank?
+    if !params[:p].blank?
+      @posts_list = Post.paginate(:page => params[:p], :per_page => 10).order("time desc")
     end
 
-    @posts_list = Post.order(time: :desc).paginate(:page => params[:page], :per_page => 10)
+    # search
+    search_root = "&q=" if !params[:q].blank?
+    if !params[:q].blank?
+      @posts_list = Post.paginate(:page => 1, :per_page => 10) if params[:p].blank?
+      @posts_list = @posts_list.where("content like '%"+params[:q]+"%'")
+      postfix += (search_root + params[:q])
+    end
 
-    current_i = @posts_list.current_page
-    total_p = @posts_list.total_pages
+    # order
+    order_root = "&o=" if !params[:o].blank?
+    if params[:o]=="oldest"
+      order_by_str = "time asc"
+    elsif  params[:o]=="latest"
+      order_by_str = "time desc"
+    end
+    if !params[:o].blank? and !order_by_str.blank?
+      @posts_list = @posts_list.reorder(order_by_str)
+      postfix += (order_root + params[:o])
+      @conditions_list.append(["Order",params[:o].capitalize!])
+    end
 
-    @first_url = @root + 1.to_s
-    @last_url = @root + @posts_list.total_pages.to_s
+    # paginate return variables
+    paginate_return(@posts_list,page_root,postfix) if !@posts_list.nil?
+  end
 
-    @prev_url = @root + (current_i-1).to_s if current_i > 1
-    @next_url = @root + (current_i+1).to_s if current_i < total_p
 
-    @url1 = 1
+  def paginate_return(list,root,postfix)
+    current_i = list.current_page
+    total_p = list.total_pages
+
+    @first_url = root + 1.to_s + postfix
+    @last_url = root + list.total_pages.to_s + postfix
+
+    @prev_url = root + ((current_i-1).to_s if current_i > 1).to_s + postfix
+    @next_url = root + ((current_i+1).to_s if current_i < total_p).to_s + postfix
+
+    url1 = 1
     if 1<=current_i && current_i<=total_p
       if current_i <= 2
-        @url1 = 1
-      elsif current_i >= total_p - 1
-        @url1 = total_p - 4
+        url1 = 1
+      elsif current_i >= total_p - 1 && current_i >= 5
+        url1 = total_p - 4
       else
-        @url1 = current_i - 2
+        url1 = current_i - 2
       end
     end
 
@@ -87,16 +114,17 @@ class SitewatchPagesController < ApplicationController
     ]
 
     to_page_range = 4
+
     if total_p<5
       to_page_range = total_p - 1
     end
 
     (0..to_page_range).each do |eachi|
       each_arr = []
-      each_arr.append(@root + (@url1+eachi).to_s)
-      each_arr.append(@url1+eachi)
+      each_arr.append(root + (url1+eachi).to_s + postfix)
+      each_arr.append(url1+eachi)
       is_span = false
-      if @url1+eachi == current_i
+      if url1+eachi == current_i
         is_span = true
       end
       each_arr.append(is_span)

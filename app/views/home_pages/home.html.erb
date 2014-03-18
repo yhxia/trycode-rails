@@ -9,7 +9,7 @@
       <div class="input-group">
         <%= text_field_tag 'text', nil, placeholder: @search_box_placeholder_text, class: "form-control input-lg"%>
         <span class="input-group-btn">
-          <button class="btn btn-success btn-lg" type="button" href="#">Go</button>
+          <button class="btn btn-success btn-lg" type="button" style="height:46px;">Go</button>
         </span>
       </div><!-- /input-group -->
     </div><!-- /.col-lg-8 -->
@@ -20,7 +20,8 @@
   <p class="row" id="home-hotwords">
     <% @hotword_list_array.each_with_index do |word,index| %>
       <%= "|" if index!=0%>
-      <a href="#"><%= word %></a>
+<!--       <a href="/sitewatch?q="> <%= word %></a> -->
+      <%= link_to word, "sitewatch?q="+word %>
     <% end %>
   </p>
   

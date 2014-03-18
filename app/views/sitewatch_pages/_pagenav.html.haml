@@ -4,22 +4,23 @@
   %li.rt
     %ul.controls
       %li.first
-        %a.first{:href=>"#{@first_url}"} &lt;&lt;
+        %a.first{:href=>"#{@first_url if !@first_url.nil?}"} &lt;&lt;
 
       %li.prev
-        %a.prev{:href=>"#{@prev_url}"} &lt;
+        %a.prev{:href=>"#{@prev_url if !@prev_url.nil?}"} &lt;
 
       %li.pages
-        -@nav_url_list.each do |url,text,is_span|
-          -if is_span == true
-            %span
-              = text
-          -else
-            %a{:href=>"#{url}"}
-              = text
+        -if !@nav_url_list.nil?
+          -@nav_url_list.each do |url,text,is_span|
+            -if is_span == true
+              %span
+                = text
+            -else
+              %a{:href=>"#{url}"}
+                = text
 
       %li.next
-        %a{:href=>"#{@next_url}"} &gt;
+        %a{:href=>"#{@next_url if !@next_url.nil?}"} &gt;
 
       %li.last
-        %a{:href=>"#{@last_url}"}&gt;&gt;
+        %a{:href=>"#{@last_url if !@last_url.nil?}"}&gt;&gt;

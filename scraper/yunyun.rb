@@ -186,7 +186,7 @@ if __FILE__ == $0 # ruby yunyun.rb
   scraper = YunyunScraper.new
 
   keywordMatrix  = [
-    # [1, 30, "iOS 7.1"],
+    [1, 30, "iOS 7.1"],
     # [1, 30, "Siri"],
     # [1, 10, "iOS Siri"],
     # [1, 10, "7.1 Siri"],
@@ -203,7 +203,7 @@ if __FILE__ == $0 # ruby yunyun.rb
     # [1, 30, "7.1 快"],
     # [1, 20, "7.1 慢"],
     # [1, 10, "7.1 崩溃"],
-    [6, 20, "7.1 界面"]
+    #[6, 20, "7.1 界面"]
   ]
 
   # from = 1 
@@ -215,17 +215,17 @@ if __FILE__ == $0 # ruby yunyun.rb
   sleep_second = 0
   url_list = []
 
-  # keywordMatrix.each do |from, to,keyword|
-  #   url_list += scraper.constructStartList(from,to,keyword)
-  # end
+  keywordMatrix.each do |from, to,keyword|
+    url_list += scraper.constructStartList(from,to,keyword)
+  end
 
 
-  # while true do
-  #   if scraper.downloader( url_list , save_root, post_fix, sleep_second) # url, dir, post_fix, sleep_second
-  #     break
-  #   end
-  #   sleep(10)
-  # end
+  while true do
+    if scraper.downloader( url_list , save_root, post_fix, sleep_second) # url, dir, post_fix, sleep_second
+      break
+    end
+    sleep(10)
+  end
 
   file_list = Dir.glob("rawdata/*")
 

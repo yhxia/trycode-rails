@@ -7,8 +7,14 @@ $ ->
   $(document).bind 'keypress', (e) =>
     if e.keyCode==13
       $('#home-searchbox button').click()
+
   # set search box focus
   $('#home-searchbox input').focus();
+
   # event when button pressed
   $('#home-searchbox button').click ->
-    alert $('#home-searchbox input').val()
+    if $('#home-searchbox input').val()!=""
+      window.open("/sitewatch?q="+$('#home-searchbox input').val(),"_self")
+    else
+      window.open("/sitewatch?q="+$('#home-searchbox input').attr('placeholder'),"_self")
+

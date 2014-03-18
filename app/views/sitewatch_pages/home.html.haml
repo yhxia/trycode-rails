@@ -12,9 +12,9 @@
     .jive-body
       /searchbox [done]
       .input-group.col-lg-4#sitewatch-searchbox
-        = text_field_tag 'text', nil, placeholder: @search_box_placeholder_text, class: "form-control input-md"
+        = text_field_tag 'text', "#{params[:q]}", placeholder: @search_box_placeholder_text, class: "form-control input-md"
         %span.input-group-btn
-          %button.btn.btn-success.btn-md#sitewatch-searchbtn{:type=>"button", :herf=>"#"} Go
+          %button.btn.btn-success.btn-md#sitewatch-searchbtn{:type=>"button"} Go
       .box
         / breadcrumb [done]
         #guide
@@ -39,30 +39,30 @@
                   .jive-body-intro-community.jive-body-intro-content-page#jive-body-intro-content
                     .row#addfilterrow
                       %strong#addfilter.pull-left Add Filter:
-                      .btn-group.pull-left
+                      .btn-group.pull-left#filter-condition
                         %a{:class => 'btn btn-default btn-sm dropdown-toggle', "data-toggle" => 'dropdown', :type=>"button", :href => '#'}
                           Condition
                           %span{:class => 'caret'}
                         %ul{:class => 'dropdown-menu',:role=>"menu"}
                           -@filter_list.each do |condition,value_list|
                             %li 
-                              %a{:href => '#'}
+                              %a{:href=>"javascript:void(0)"}
                                 = condition
                               = hidden_field_tag 'value_list', value_list
-                      .btn-group.pull-left#value
+                      .btn-group.pull-left#filter-value
                         / [Todo: use js to control it show]
-                        / %a{:class => 'btn btn-default btn-sm dropdown-toggle', "data-toggle" => 'dropdown', :type=>"button", :href => '#'}
-                        /   Value
-                        /   %span{:class => 'caret'}
-                        / %ul{:class =>'dropdown-menu',:role=>"menu"}
-                        /   %li 
-                        /     %a{:href => '#'} iOS
-                        /   %li 
-                        /     %a{:href => '#' } OS X  
-                        /   %li 
-                        /     %a{:href => '#' } iPhone
-                        /   %li 
-                        /     %a{:href => '#'} Mac
+                        %a{:class => 'btn btn-default btn-sm dropdown-toggle', "data-toggle" => 'dropdown', :type=>"button", :href => '#'}
+                          Value
+                          %span{:class => 'caret'}
+                        %ul{:class =>'dropdown-menu',:role=>"menu"}
+                          / %li 
+                          /   %a{:href => '#'} iOS
+                          / %li 
+                          /   %a{:href => '#' } OS X  
+                          / %li 
+                          /   %a{:href => '#' } iPhone
+                          / %li 
+                          /   %a{:href => '#'} Mac
                       / [ignored add input frame]
                       / .input-group.input-group-sm{:style=>"width:250px;"}
                       /   %input.form-control{:type => "text"}/
