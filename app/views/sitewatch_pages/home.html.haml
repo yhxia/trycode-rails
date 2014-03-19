@@ -40,7 +40,7 @@
                     .row#addfilterrow
                       %strong#addfilter.pull-left Add Filter:
                       .btn-group.pull-left#filter-condition
-                        %a{:class => 'btn btn-default btn-sm dropdown-toggle', "data-toggle" => 'dropdown', :type=>"button", :href => '#'}
+                        %a{:class => 'btn btn-default btn-sm dropdown-toggle', "data-toggle" => 'dropdown', :type=>"button"}
                           Condition
                           %span{:class => 'caret'}
                         %ul{:class => 'dropdown-menu',:role=>"menu"}
@@ -51,18 +51,18 @@
                               = hidden_field_tag 'value_list', value_list
                       .btn-group.pull-left#filter-value
                         / [Todo: use js to control it show]
-                        %a{:class => 'btn btn-default btn-sm dropdown-toggle', "data-toggle" => 'dropdown', :type=>"button", :href => '#'}
-                          Value
+                        %a{:class => 'btn btn-default btn-sm dropdown-toggle', "data-toggle" => 'dropdown', :type=>"button"}
+                          Choose
                           %span{:class => 'caret'}
                         %ul{:class =>'dropdown-menu',:role=>"menu"}
-                          / %li 
-                          /   %a{:href => '#'} iOS
-                          / %li 
-                          /   %a{:href => '#' } OS X  
-                          / %li 
-                          /   %a{:href => '#' } iPhone
-                          / %li 
-                          /   %a{:href => '#'} Mac
+                        / %li 
+                        /   %a{:href => '#'} iOS
+                        / %li 
+                        /   %a{:href => '#' } OS X  
+                        / %li 
+                        /   %a{:href => '#' } iPhone
+                        / %li 
+                        /   %a{:href => '#'} Mac
                       / [ignored add input frame]
                       / .input-group.input-group-sm{:style=>"width:250px;"}
                       /   %input.form-control{:type => "text"}/

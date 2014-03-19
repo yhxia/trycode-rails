@@ -1,5 +1,8 @@
+require 'json'
+
 class SitewatchPagesController < ApplicationController
   def home
+
     @search_box_placeholder_text = "Apple"
 
     @breadcrumb_array = [["Userview","active"]] # set "" when not active
@@ -20,19 +23,18 @@ class SitewatchPagesController < ApplicationController
 
     @marked_list = ["True", "False"].to_json
 
-    @order_list = ["Latest", "Oldest"].to_json
+    @order_list = ["Latest"].to_json
 
-    @filter_list = 
-    [
-      ["Project", @project_list],
-      ["From", @from_list],
-      ["To", @to_list],
-      ["Related", @related_list],
-      ["Site", @site_list],
-      ["Attitude", @attitude_list],
-      ["Reviewed", @reviewed_list],
-      ["Marked", @marked_list],
+    @filter_list = [
       ["Order", @order_list]
+      # ["From", @from_list],
+      # ["To", @to_list],
+      # ["Project", @project_list],
+      # ["Site", @site_list],
+      # ["Attitude", @attitude_list],
+      # ["Reviewed", @reviewed_list],
+      # ["Marked", @marked_list],
+      # ["Related", @related_list]
     ]
 
     @conditions_list = 
@@ -55,7 +57,7 @@ class SitewatchPagesController < ApplicationController
     page_root = "?p="
     params[:p] = 1 if params[:p].blank?
     if !params[:p].blank?
-      @posts_list = Post.paginate(:page => params[:p], :per_page => 10).order("time desc")
+      @posts_list = Post.paginate(:page => params[:p], :per_page => 10)
     end
 
     # search
@@ -68,15 +70,15 @@ class SitewatchPagesController < ApplicationController
 
     # order
     order_root = "&o=" if !params[:o].blank?
-    if params[:o]=="oldest"
+    if params[:o] == "Oldest"
       order_by_str = "time asc"
-    elsif  params[:o]=="latest"
+    elsif  params[:o] == "Latest"
       order_by_str = "time desc"
     end
     if !params[:o].blank? and !order_by_str.blank?
       @posts_list = @posts_list.reorder(order_by_str)
       postfix += (order_root + params[:o])
-      @conditions_list.append(["Order",params[:o].capitalize!])
+      @conditions_list.append(["Order",params[:o].capitalize])
     end
 
     # paginate return variables
@@ -91,11 +93,21 @@ class SitewatchPagesController < ApplicationController
     @first_url = root + 1.to_s + postfix
     @last_url = root + list.total_pages.to_s + postfix
 
-    @prev_url = root + ((current_i-1).to_s if current_i > 1).to_s + postfix
-    @next_url = root + ((current_i+1).to_s if current_i < total_p).to_s + postfix
+
+    if current_i > 1 && current_i<total_p
+      @prev_url = root + (current_i-1).to_s + postfix
+    else
+      @prev_url = @first_url
+    end
+
+    if current_i < total_p
+      @next_url = root + (current_i+1).to_s + postfix
+    else
+      @next_url = @last_url
+    end
 
     url1 = 1
-    if 1<=current_i && current_i<=total_p
+    if 1<=current_i && current_i<=total_p && total_p>=5
       if current_i <= 2
         url1 = 1
       elsif current_i >= total_p - 1 && current_i >= 5
