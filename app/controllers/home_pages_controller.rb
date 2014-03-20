@@ -21,7 +21,6 @@ class HomePagesController < ApplicationController
       ["苹果","6123 views"],
       ["iPhone5s","1535 views"]
     ]
-    session[:haha] = "gagahome"
   end
 
 end

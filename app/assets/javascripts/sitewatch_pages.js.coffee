@@ -67,9 +67,31 @@ $ ->
 
   #####################################################################
   #for posts
-  # $('#userview-custom-bar button').click ->
-  #   alert($(this).next().children("input:text").html())
+  $('#userview-custom-bar button').click ->
+    # alert($(this).next().children().first().val()) 
+    post_obj = $(this).parent().children()
+    uv_radar = post_obj.eq(1).children().first().val() #rdar
+    uv_comment = post_obj.eq(2).children().first().val() #comment
+    radios_obj = post_obj.eq(3).children()
+    uv_unrelated = radios_obj.eq(0).children().eq(0).first().is(":checked")
+    uv_positive = radios_obj.eq(1).children().eq(0).first().is(":checked")
+    uv_neutral = radios_obj.eq(2).children().eq(0).first().is(":checked")
+    uv_negative = radios_obj.eq(3).children().eq(0).first().is(":checked")
 
+    params_add_report = {}
+    params_add_report["uv_radar"] = uv_radar
+    params_add_report["uv_comment"] = uv_comment
+    params_add_report["uv_attitude"] = 0
+    if uv_unrelated
+      params_add_report["uv_attitude"] = 1
+    else if uv_positive
+      params_add_report["uv_attitude"] = 2
+    else if uv_neutral
+      params_add_report["uv_attitude"] = 3
+    else if uv_negative
+      params_add_report["uv_attitude"] = 4
+    json_add_report = jQuery.param(params_add_report)
+    alert(json_add_report)
 
 
 
