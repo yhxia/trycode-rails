@@ -21,7 +21,7 @@
     <% @hotword_list_array.each_with_index do |word,index| %>
       <%= "|" if index!=0%>
 <!--       <a href="/sitewatch?q="> <%= word %></a> -->
-      <%= link_to word, "sitewatch?q="+word %>
+      <%= link_to word, posts_path+"?q="+word.to_s+"&o=Latest" %>
     <% end %>
   </p>
   

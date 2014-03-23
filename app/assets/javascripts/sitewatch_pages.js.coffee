@@ -22,9 +22,9 @@ $ ->
   # event when searchbox button pressed
   $('#sitewatch-searchbox button').click ->
     if $('#sitewatch-searchbox input').val()!=""
-      window.open("?q="+$('#sitewatch-searchbox input').val(),"_self")
+      window.open("?q="+$('#sitewatch-searchbox input').val()+"&o=Latest","_self")
     else
-      window.open("?q="+$('#sitewatch-searchbox input').attr('placeholder'),"_self")
+      window.open("?q="+$('#sitewatch-searchbox input').attr('placeholder')+"&o=Latest","_self")
 
   $('#filter-value').hide()
 
@@ -77,21 +77,38 @@ $ ->
     uv_positive = radios_obj.eq(1).children().eq(0).first().is(":checked")
     uv_neutral = radios_obj.eq(2).children().eq(0).first().is(":checked")
     uv_negative = radios_obj.eq(3).children().eq(0).first().is(":checked")
+    post_id = radios_obj.eq(0).children().eq(0).first().attr("name")
+    post_url = $(this).parent().parent().parent().parent().parent().children().find("a").eq(0).attr("href")
 
-    params_add_report = {}
-    params_add_report["uv_radar"] = uv_radar
-    params_add_report["uv_comment"] = uv_comment
-    params_add_report["uv_attitude"] = 0
+    uv_attitude = "0"
     if uv_unrelated
-      params_add_report["uv_attitude"] = 1
+      uv_attitude = "1"
     else if uv_positive
-      params_add_report["uv_attitude"] = 2
+      uv_attitude = "2"
     else if uv_neutral
-      params_add_report["uv_attitude"] = 3
+      uv_attitude = "3"
     else if uv_negative
-      params_add_report["uv_attitude"] = 4
-    json_add_report = jQuery.param(params_add_report)
-    alert(json_add_report)
+      uv_attitude = "4"
+
+    new_highlight = {}
+    new_highlight.id = post_id
+    new_highlight.url = post_url
+    new_highlight.radar = uv_radar
+    new_highlight.comment = uv_comment
+    new_highlight.attitude = uv_attitude
+    new_highlight.keyword = params['q']
+
+    if $.cookie("highlights")
+      json_report = JSON.parse($.cookie("highlights"))      
+    else
+      json_report = {items:[]}
+
+    json_report.items.push(new_highlight)
+
+    $.cookie("highlights",JSON.stringify(json_report))
+
+    alert("Add #"+post_id+" Success!")
+
 
 
 

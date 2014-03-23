@@ -15,7 +15,7 @@
           %h4 Summary
         .panel-body#summary-content
           %textarea.form-control{:rows=>"3",:placeholder=>"Input summary on the top..."}
-          / = session[:haha]
+            = cookies[:result]
 
       /highlight
       .panel.panel-default#highlight-panel
@@ -31,47 +31,27 @@
                 %th{:style=>"width:5%;"} Radar
                 %th{:style=>"width:5%;"} Edit
             %tbody
-              %tr
-                %td 1
-                %td
-                  %p This is a big system problem.
-                %td 
-                  %button.btn.btn-default.btn-xs{:type=>"button"} #1
-                  %button.btn.btn-default.btn-xs{:type=>"button"} #2
-                %td
-                  %button.btn.btn-default.btn-xs{:type=>"button"} #16244188
-                  %button.btn.btn-default.btn-xs{:type=>"button"} #16244237
-                %td
-                  %a{:href => "#"} 
-                    %span.glyphicon.glyphicon-pencil
-              %tr
-                %td 2
-                %td
-                  %p Problem of battary.
-                %td 
-                  %button.btn.btn-default.btn-xs{:type=>"button"} #1
-                %td
-                  %button.btn.btn-default.btn-xs{:type=>"button"} #16247425
-                %td
-                  %a{:href => "#"} 
-                    %span.glyphicon.glyphicon-pencil
-              %tr
-                %td 3
-                %td
-                  %p Fix it soon.
-                %td 
-                  %button.btn.btn-default.btn-xs{:type=>"button"} #1
-                  %button.btn.btn-default.btn-xs{:type=>"button"} #2
-                  %button.btn.btn-default.btn-xs{:type=>"button"} #3
-                  %button.btn.btn-default.btn-xs{:type=>"button"} #4
-                %td
-                  %button.btn.btn-default.btn-xs{:type=>"button"} #16244628
-                  %button.btn.btn-default.btn-xs{:type=>"button"} #16231652
-                  %button.btn.btn-default.btn-xs{:type=>"button"} #16246255
-                  %button.btn.btn-default.btn-xs{:type=>"button"} #16272354
-                %td
-                  %a{:href => "#"} 
-                    %span.glyphicon.glyphicon-pencil
+              - if !@highlights_list.nil?
+                - @highlights_list.each_with_index do |highlight,index|
+                  %tr
+                    %td 
+                      = (index + 1).to_s
+                    %td
+                      %p 
+                        = highlight[:comment]
+                    %td 
+                      - highlight[:url].each_with_index do |post_url,index|
+                        %button.btn.btn-default.btn-xs{:type=>"button"}
+                          %a{:href => "#{post_url}", :target=>"_blank"} 
+                            = "#" + highlight[:id]
+                    %td
+                      - highlight[:radar].each do |radar_number|
+                        %button.btn.btn-default.btn-xs{:type=>"button"}
+                          %a{:href => "rdar://problem/#{radar_number}"} 
+                            = "#" + radar_number
+                    %td
+                      %a{:href => "#"} 
+                        %span.glyphicon.glyphicon-pencil
       
       /charts
       .panel.panel-default#charts-panel
@@ -83,7 +63,7 @@
               %tr 
                 %th Keyword
                 %th.row{:style=>"width:80%;"}
-                  %label.pull-left{:style=>"margin-bottom:0px;"} Attitude Bar
+                  %label.pull-left{:style=>"margin-bottom:0px;"} Attitude
                   .progress.pull-left{:style=>"width:32%; margin-bottom:0px; margin-left:15px;"}
                     .progress-bar.progress-bar-success{:style=>"width:33%"}
                       %span.sr-only 33%
@@ -96,34 +76,43 @@
                       %p Negative
                 %th Total
             %tbody
-              %tr 
-                %td iOS7
-                %td 
-                  .progress{:style=>"width:51%"}
-                    .progress-bar.progress-bar-success{:style=>"width:35%"}
-                      %span.sr-only 33%
-                      %p 35%
-                    .progress-bar.progress-bar-info{:style=>"width:20%"}
-                      %span.sr-only 33%
-                      %p 20% 
-                    .progress-bar.progress-bar-danger{:style=>"width:45%"}
-                      %span.sr-only 33%
-                      %p 45%
-                %td 1242
-              %tr 
-                %td iPhone6
-                %td 
-                  .progress{:style=>"width:90%"}
-                    .progress-bar.progress-bar-success{:style=>"width:23%"}
-                      %span.sr-only 33%
-                      %p 23%
-                    .progress-bar.progress-bar-info{:style=>"width:64%"}
-                      %span.sr-only 33%
-                      %p 64% 
-                    .progress-bar.progress-bar-danger{:style=>"width:13%"}
-                      %span.sr-only 33%
-                      %p 13%
-                %td 2723
+              - @chart_list.each do |key,value|
+                %tr 
+                  %td
+                    = key
+                  %td
+                    .progress{:style=>"width:#{value[0]}"}
+                      .progress-bar.progress-bar-success{:style=>"width:#{value[1]}"}
+                        %span.sr-only
+                          = value[1]
+                        %p
+                          = value[1]
+                      .progress-bar.progress-bar-info{:style=>"width:#{value[2]}"}
+                        %span.sr-only
+                          = value[2]
+                        %p
+                          = value[2]
+                      .progress-bar.progress-bar-danger{:style=>"width:#{value[3]}"}
+                        %span.sr-only
+                          = value[3]
+                        %p
+                          = value[3]
+                  %td
+                    = value[4]
+                    / %tr 
+                    /   %td iPhone6
+                    /   %td 
+                    /     .progress{:style=>"width:90%"}
+                    /       .progress-bar.progress-bar-success{:style=>"width:23%"}
+                    /         %span.sr-only 33%
+                    /         %p 23%
+                    /       .progress-bar.progress-bar-info{:style=>"width:64%"}
+                    /         %span.sr-only 33%
+                    /         %p 64% 
+                    /       .progress-bar.progress-bar-danger{:style=>"width:13%"}
+                    /         %span.sr-only 33%
+                    /         %p 13%
+                    /   %td 2723
       
       /keyword
       .panel.panel-default#keyword-panel
@@ -148,19 +137,13 @@
               %tr 
                 %th Project
                 %th Keyword
-            %tbody 
-              %tr 
-                %td iOS7
-                %td battary
-              %tr 
-                %td iPhone6
-                %td design
-              %tr 
-                %td 
-                %td 信号
-              %tr 
-                %td 
-                %td 4G网络
+            %tbody
+              - @keyword_list.each do |project,keyword|
+                %tr 
+                  %td 
+                    = project
+                  %td 
+                    = keyword
 
     .col-lg-3
       /To

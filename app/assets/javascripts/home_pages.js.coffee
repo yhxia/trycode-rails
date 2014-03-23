@@ -14,7 +14,7 @@ $ ->
   # event when button pressed
   $('#home-searchbox button').click ->
     if $('#home-searchbox input').val()!=""
-      window.open("/sitewatch?q="+$('#home-searchbox input').val(),"_self")
+      window.open("/posts?q="+$('#home-searchbox input').val()+"&o=Latest","_self")
     else
-      window.open("/sitewatch?q="+$('#home-searchbox input').attr('placeholder'),"_self")
+      window.open("/posts?q="+$('#home-searchbox input').attr('placeholder')+"&o=Latest","_self")
 

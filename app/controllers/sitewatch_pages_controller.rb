@@ -56,13 +56,11 @@ class SitewatchPagesController < ApplicationController
     # paginate
     page_root = "?p="
     params[:p] = 1 if params[:p].blank?
-    if !params[:p].blank?
-      @posts_list = Post.paginate(:page => params[:p], :per_page => 10)
-    end
 
     # search
     search_root = "&q=" if !params[:q].blank?
     if !params[:q].blank?
+      @posts_list = Post.paginate(:page => params[:p], :per_page => 10)
       @posts_list = Post.paginate(:page => 1, :per_page => 10) if params[:p].blank?
       @posts_list = @posts_list.where("content like '%"+params[:q]+"%'")
       postfix += (search_root + params[:q])
@@ -75,7 +73,7 @@ class SitewatchPagesController < ApplicationController
     elsif  params[:o] == "Latest"
       order_by_str = "time desc"
     end
-    if !params[:o].blank? and !order_by_str.blank?
+    if !params[:o].blank? and !order_by_str.blank? and !params[:q].blank?
       @posts_list = @posts_list.reorder(order_by_str)
       postfix += (order_root + params[:o])
       @conditions_list.append(["Order",params[:o].capitalize])
@@ -107,7 +105,7 @@ class SitewatchPagesController < ApplicationController
     end
 
     url1 = 1
-    if 1<=current_i && current_i<=total_p && total_p>=5
+    if 1<=current_i && current_i<=total_p && total_p>5
       if current_i <= 2
         url1 = 1
       elsif current_i >= total_p - 1 && current_i >= 5
