@@ -92,7 +92,7 @@ class SitewatchPagesController < ApplicationController
     @last_url = root + list.total_pages.to_s + postfix
 
 
-    if current_i > 1 && current_i<total_p
+    if current_i > 1 && current_i<=total_p
       @prev_url = root + (current_i-1).to_s + postfix
     else
       @prev_url = @first_url
