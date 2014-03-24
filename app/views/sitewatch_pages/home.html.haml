@@ -15,6 +15,7 @@
         = text_field_tag 'text', "#{params[:q]}", placeholder: @search_box_placeholder_text, class: "form-control input-md"
         %span.input-group-btn
           %button.btn.btn-success.btn-md#sitewatch-searchbtn{:type=>"button"} Go
+      %canvas#canvas.pull-left{:width=>"1100",:height=>"100"}
       .box
         / breadcrumb [done]
         #guide
