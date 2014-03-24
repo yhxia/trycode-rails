@@ -2,7 +2,7 @@ class HomePagesController < ApplicationController
   def home
     @search_box_placeholder_text = 'Apple'
 
-    @hotword_list_array = ["iPhone5s","苹果","iOS7","Siri","App Store","输入法","iPad","移动4G","Mac","iPod"]
+    @hotword_list_array = ["iPhone5s","苹果","iOS7","Siri","耗电","输入法","iPad","移动4G","Mac","iTunes"]
 
     @collecting_table_array = 
     [

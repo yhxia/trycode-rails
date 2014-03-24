@@ -46,9 +46,12 @@
                             = "#" + highlight[:id]
                     %td
                       - highlight[:radar].each do |radar_number|
-                        %button.btn.btn-default.btn-xs{:type=>"button"}
-                          %a{:href => "rdar://problem/#{radar_number}"} 
-                            = "#" + radar_number
+                        - if radar_number==""
+                          = "n/a"
+                        - else
+                          %button.btn.btn-default.btn-xs{:type=>"button"}
+                            %a{:href => "rdar://problem/#{radar_number}"} 
+                              = "#" + radar_number
                     %td
                       %a{:href => "#"} 
                         %span.glyphicon.glyphicon-pencil
@@ -76,43 +79,30 @@
                       %p Negative
                 %th Total
             %tbody
-              - @chart_list.each do |key,value|
-                %tr 
-                  %td
-                    = key
-                  %td
-                    .progress{:style=>"width:#{value[0]}"}
-                      .progress-bar.progress-bar-success{:style=>"width:#{value[1]}"}
-                        %span.sr-only
-                          = value[1]
-                        %p
-                          = value[1]
-                      .progress-bar.progress-bar-info{:style=>"width:#{value[2]}"}
-                        %span.sr-only
-                          = value[2]
-                        %p
-                          = value[2]
-                      .progress-bar.progress-bar-danger{:style=>"width:#{value[3]}"}
-                        %span.sr-only
-                          = value[3]
-                        %p
-                          = value[3]
-                  %td
-                    = value[4]
-                    / %tr 
-                    /   %td iPhone6
-                    /   %td 
-                    /     .progress{:style=>"width:90%"}
-                    /       .progress-bar.progress-bar-success{:style=>"width:23%"}
-                    /         %span.sr-only 33%
-                    /         %p 23%
-                    /       .progress-bar.progress-bar-info{:style=>"width:64%"}
-                    /         %span.sr-only 33%
-                    /         %p 64% 
-                    /       .progress-bar.progress-bar-danger{:style=>"width:13%"}
-                    /         %span.sr-only 33%
-                    /         %p 13%
-                    /   %td 2723
+              -if !@chart_list.nil?
+                - @chart_list.each do |key,value|
+                  %tr 
+                    %td
+                      = key
+                    %td
+                      .progress{:style=>"width:#{value[0]}"}
+                        .progress-bar.progress-bar-success{:style=>"width:#{value[1]}"}
+                          %span.sr-only
+                            = value[1]
+                          %p
+                            = value[1]
+                        .progress-bar.progress-bar-info{:style=>"width:#{value[2]}"}
+                          %span.sr-only
+                            = value[2]
+                          %p
+                            = value[2]
+                        .progress-bar.progress-bar-danger{:style=>"width:#{value[3]}"}
+                          %span.sr-only
+                            = value[3]
+                          %p
+                            = value[3]
+                    %td
+                      = value[4]
       
       /keyword
       .panel.panel-default#keyword-panel
@@ -120,30 +110,18 @@
           %h4 Keyword Combo
         .panel-body#keyword-content
           %table.table.table-hover
-            / %tbody
-            /   %tr
-            /     %th project
-            /     %td iOS7
-            /     %td iPhone6
-            /     %td 
-            /     %td 
-            /   %tr 
-            /     %th keyword
-            /     %td battary
-            /     %td design
-            /     %td 信号
-            /     %td 4G网络
             %thead 
               %tr 
                 %th Project
                 %th Keyword
             %tbody
-              - @keyword_list.each do |project,keyword|
-                %tr 
-                  %td 
-                    = project
-                  %td 
-                    = keyword
+              -if !@keyword_list.nil?
+                - @keyword_list.each do |project,keyword|
+                  %tr 
+                    %td 
+                      = project
+                    %td 
+                      = keyword
 
     .col-lg-3
       /To

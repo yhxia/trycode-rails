@@ -6,6 +6,7 @@ require 'active_support'
 require 'active_support/time'
 require 'active_record'
 require 'yaml'
+require 'uri'
 
 class Post < ActiveRecord::Base
 end
@@ -57,7 +58,7 @@ class YunyunScraper
     url_list = []
     (from_page_number..to_page_number).each do |pagenumber|
       url = url_root+"p="+pagenumber.to_s+"&q="+query_keyword
-      url_list << url
+      url_list << URI::escape(url)
     end
     puts "Download url_list:",url_list.to_s
     return url_list
@@ -186,7 +187,11 @@ if __FILE__ == $0 # ruby yunyun.rb
   scraper = YunyunScraper.new
 
   keywordMatrix  = [
-    [1, 30, "iOS 7.1"],
+    [1,4,"7.1 拼音"], #拼音
+    [1,12,"7.1 输入法"], #输入法
+    [1,5,"7.1 九宫格"], #九宫格
+    [1,12,"iOS 输入法"] #输入法
+    # [1, 30, "iOS 7.1"],
     # [1, 30, "Siri"],
     # [1, 10, "iOS Siri"],
     # [1, 10, "7.1 Siri"],
@@ -215,7 +220,7 @@ if __FILE__ == $0 # ruby yunyun.rb
   sleep_second = 0
   url_list = []
 
-  keywordMatrix.each do |from, to,keyword|
+  keywordMatrix.each do |from, to, keyword|
     url_list += scraper.constructStartList(from,to,keyword)
   end
 
