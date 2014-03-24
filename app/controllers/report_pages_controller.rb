@@ -3,7 +3,7 @@ class ReportPagesController < ApplicationController
 
     # cookies.delete :highlights
 
-    if !cookies[:highlights].nil?
+    if !cookies[:highlights].nil? && cookies[:highlights]!=""
       highlights = JSON.parse(cookies[:highlights])
       @highlights_list = []
       highlights["items"].each do |item|
@@ -33,6 +33,8 @@ class ReportPagesController < ApplicationController
         if item["attitude"].to_i>=2 && item["attitude"].to_i<=4
           chart_raw_list[item["keyword"]][item["attitude"].to_i-1] += 1
           chart_raw_list[item["keyword"]][4]+=1
+        else 
+          next
         end
         # add up total
         if max < chart_raw_list[item["keyword"]][4]

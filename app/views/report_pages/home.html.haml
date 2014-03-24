@@ -41,20 +41,20 @@
                         = highlight[:comment]
                     %td 
                       - highlight[:url].each_with_index do |post_url,index|
-                        %button.btn.btn-default.btn-xs{:type=>"button"}
-                          %a{:href => "#{post_url}", :target=>"_blank"} 
-                            = "#" + highlight[:id]
+                        %a.btn.btn-default.btn-xs{:href => "#{post_url}", :target=>"_blank",:type=>"button"} 
+                          = "#" + highlight[:id]
                     %td
                       - highlight[:radar].each do |radar_number|
                         - if radar_number==""
                           = "n/a"
                         - else
-                          %button.btn.btn-default.btn-xs{:type=>"button"}
-                            %a{:href => "rdar://problem/#{radar_number}"} 
-                              = "#" + radar_number
+                          %a.btn.btn-default.btn-xs{:href => "rdar://problem/#{radar_number}",:type=>"button"} 
+                            = "#" + radar_number
                     %td
                       %a{:href => "#"} 
                         %span.glyphicon.glyphicon-pencil
+          - if !@highlights_list.nil?
+            %button.btn.btn-danger.btn-sm.pull-right#clear-cookie-btn{:type=>"button",:style=>"margin-top:10px;"} Clear All Above
       
       /charts
       .panel.panel-default#charts-panel
