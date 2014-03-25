@@ -71,6 +71,8 @@ $ ->
     btn_obj = $(this).parent().parent().parent().children().first()
     if $(this).val()!="unrelated" && btn_obj.hasClass("btn-primary")
       btn_obj.attr("disabled",false)
+    if $(this).val()=="unrelated" && btn_obj.hasClass("btn-primary")
+      btn_obj.attr("disabled",true)
 
   $('#userview-custom-bar button').click ->
     $(this).attr("disabled",true)
