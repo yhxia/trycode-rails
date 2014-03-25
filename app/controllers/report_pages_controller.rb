@@ -46,20 +46,21 @@ class ReportPagesController < ApplicationController
       @keyword_list = []
       #second loop decide each bar length
       #from chart_raw_list to chart_list
-      chart_raw_list.each do |key,value|
-        @chart_list[key] = ["","","","",0]
-        @chart_list[key][0] = (95.0*value[4]/max).round(0).to_s+"%" # bar_per
-        pos_per = (100.0*value[1]/value[4]).round(0)
-        @chart_list[key][1] = pos_per.to_s+"%"
-        neu_per = (100.0*value[2]/value[4]).round(0)
-        @chart_list[key][2] = neu_per.to_s+"%"
-        @chart_list[key][3] = (100 - pos_per - neu_per).to_s+"%"
-        @chart_list[key][4] = value[4]
-        @keyword_list.append(["",key])
+      if max!=0
+        chart_raw_list.each do |key,value|
+          @chart_list[key] = ["","","","",0]
+          @chart_list[key][0] = (95.0*value[4]/max).round(0).to_s+"%" # bar_per
+          pos_per = (100.0*value[1]/value[4]).round(0)
+          @chart_list[key][1] = pos_per.to_s+"%"
+          neu_per = (100.0*value[2]/value[4]).round(0)
+          @chart_list[key][2] = neu_per.to_s+"%"
+          @chart_list[key][3] = (100 - pos_per - neu_per).to_s+"%"
+          @chart_list[key][4] = value[4]
+          @keyword_list.append(["",key])
+        end
+        
+        @keyword_list[0][0] = "iOS7.1"
       end
-
-      @keyword_list[0][0] = "iOS7.1"
-
       # @chart_list = {
       #   "Apple"=>["51%","51%","20%","29%",124],
       #   "苹果"=>["90%","23%","64%","13%",252]

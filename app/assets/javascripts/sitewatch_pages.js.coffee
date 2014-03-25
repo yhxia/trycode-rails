@@ -67,7 +67,16 @@ $ ->
 
   #####################################################################
   #for posts
+  $('#userview-custom-bar input[type=radio]').change ->
+    btn_obj = $(this).parent().parent().parent().children().first()
+    if $(this).val()!="unrelated" && btn_obj.hasClass("btn-primary")
+      btn_obj.attr("disabled",false)
+
   $('#userview-custom-bar button').click ->
+    $(this).attr("disabled",true)
+    $(this).text("In the report √")
+    $(this).removeClass("btn-primary").addClass("btn-success")
+
     # alert($(this).next().children().first().val()) 
     post_obj = $(this).parent().children()
     uv_radar = post_obj.eq(1).children().first().val() #rdar
@@ -108,6 +117,7 @@ $ ->
     $.cookie("highlights",JSON.stringify(json_report))
 
     alert("Add #"+post_id+" Success!")
+    
 
 
 

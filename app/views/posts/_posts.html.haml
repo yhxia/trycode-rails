@@ -28,8 +28,7 @@
           %ul.issues
             .row#userview-custom-bar
               / =form_tag posts_path :action=>'update' do
-              =button_tag 'Add to report »', class: "btn btn-xs pull-right btn-primary"
-              /, disabled: post[:uv_attitude].to_i<2
+              =button_tag 'Add to report »', class: "btn btn-xs pull-right btn-primary", disabled: !(post[:uv_attitude].to_i>2 && post[:uv_attitude].to_i<4)
               .col-lg-3.pull-right
                 =text_field_tag 'radarinput', post[:uv_radar], placeholder: 'rdar://...', class: "form-control input-sm"
               .col-lg-3.pull-right

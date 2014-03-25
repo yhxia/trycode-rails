@@ -187,10 +187,10 @@ if __FILE__ == $0 # ruby yunyun.rb
   scraper = YunyunScraper.new
 
   keywordMatrix  = [
-    [1,4,"7.1 拼音"], #拼音
-    [1,12,"7.1 输入法"], #输入法
-    [1,5,"7.1 九宫格"], #九宫格
-    [1,12,"iOS 输入法"] #输入法
+    # [1,4,"7.1 拼音"],
+    # [1,12,"7.1 输入法"],
+    # [1,5,"7.1 九宫格"],
+    # [1,12,"iOS 输入法"]
     # [1, 30, "iOS 7.1"],
     # [1, 30, "Siri"],
     # [1, 10, "iOS Siri"],
@@ -201,14 +201,15 @@ if __FILE__ == $0 # ruby yunyun.rb
 
     # [1, 20, "7.1 输入法"],
     # [1, 20, "7.1 耗电"],
-    # [1, 20, "7.1 费电"],
+    # [1, 20, "7.1 费电"]
     # [1, 20, "7.1 电池"],
     # [1, 10, "7.1 反应"],
     # [1, 10, "7.1 性能"],
     # [1, 30, "7.1 快"],
     # [1, 20, "7.1 慢"],
     # [1, 10, "7.1 崩溃"],
-    #[6, 20, "7.1 界面"]
+    # [6, 20, "7.1 界面"],
+    # [1, 42, "苹果 iOS"]
   ]
 
   # from = 1 
@@ -223,7 +224,6 @@ if __FILE__ == $0 # ruby yunyun.rb
   keywordMatrix.each do |from, to, keyword|
     url_list += scraper.constructStartList(from,to,keyword)
   end
-
 
   while true do
     if scraper.downloader( url_list , save_root, post_fix, sleep_second) # url, dir, post_fix, sleep_second
