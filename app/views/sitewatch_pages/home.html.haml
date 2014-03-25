@@ -16,6 +16,7 @@
         %span.input-group-btn
           %button.btn.btn-success.btn-md#sitewatch-searchbtn{:type=>"button"} Go
       %canvas#canvas.pull-left{:width=>"1100",:height=>"100"}
+      = hidden_field_tag 'canvas_data', @canvas_data
       .box
         / breadcrumb [done]
         #guide

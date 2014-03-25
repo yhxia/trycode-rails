@@ -81,6 +81,23 @@ class SitewatchPagesController < ApplicationController
 
     # paginate return variables
     paginate_return(@posts_list,page_root,postfix) if !@posts_list.nil?
+
+    # canvas data for line bar
+    date_list = {
+      # "2-24"=>124,
+      # "3-22"=>12
+    }
+
+    if !params[:q].blank?
+      dt_cnt_data = Post.where("content like '%"+params[:q]+"%'").select("date(time) as dt,COUNT(*) as cnt").group("dt").order("dt desc").limit(30)
+      dt_cnt_data.each do |data|
+        date_format = data[:dt].mon.to_s + "-" + data[:dt].mday.to_s
+        date_list[date_format] = data[:cnt]
+      end
+    end
+
+    @canvas_data = date_list.to_json
+
   end
 
 
