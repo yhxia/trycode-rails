@@ -7,15 +7,15 @@ require 'active_support/time'
 require 'active_record'
 require 'yaml'
 require 'uri'
-require 'open3'
 require 'pathname'
 
 class Post < ActiveRecord::Base
 end
 
-class YunyunScraper
+class Proxy < ActiveRecord::Base
+end
 
-  @@proxy_index = 0
+class YunyunScraper
 
   def initialize
     ActiveRecord::Base.establish_connection(
@@ -23,6 +23,35 @@ class YunyunScraper
       :database => 'userview_test',
       :username => 'root',
       :host     => 'localhost')
+    @proxy_index = 0
+  end
+
+  # Downloader core
+  def fetchContentByPhantomjs2(url, proxy)
+    arr = []
+    argUrl = 'http://weibo.yunyun.com/Weibo.php?p=1&q=iphone' #default path
+    if url!=""
+      argUrl = url
+    end
+    puts "\e[32m[Phantomjs] Fetching "+argUrl+"...\e[0m"
+
+    jspath =  File.dirname(__FILE__) + "/phantomjs_caller.js"
+    puts "Proxy = "+proxy
+    Phantomjs.run("--proxy="+proxy, jspath, argUrl) do |line|
+      puts line
+      if line[/\w+/]!='Unsafe' && line!="\n"
+        arr<<line
+      end
+    end
+
+    if arr.length<200
+      puts "\e[31m[Phantomjs] Content not enough! Skip...\e[0m"
+      return []
+    end
+
+    puts "\e[32m[Phantomjs] Fetching content success!\e[0m"
+    puts "\e[32m[Phantomjs] Lines = "+arr.length.to_s+"\e[0m"
+    return arr
   end
 
   # Downloader core
@@ -39,8 +68,8 @@ class YunyunScraper
       proxy_lines = File.readlines("proxy.list")
 
       jspath =  File.dirname(__FILE__) + "/phantomjs_caller.js"
-      puts "Proxy = "+proxy_lines[@@proxy_index].strip()
-      Phantomjs.run("--proxy="+proxy_lines[@@proxy_index].strip(), jspath, argUrl) do |line|
+      puts "Proxy = "+proxy_lines[@proxy_index].strip()
+      Phantomjs.run("--proxy="+proxy_lines[@proxy_index].strip(), jspath, argUrl) do |line|
         puts line
         if line[/\w+/]!='Unsafe' && line!="\n"
           arr<<line
@@ -63,14 +92,14 @@ class YunyunScraper
   end
 
   # Download List Generator
-  def constructStartList(from_page_number, to_page_number,query_keyword)
+  def constructStartList(from_page_number, to_page_number, query_keyword, project)
     url_root = "http://weibo.yunyun.com/Weibo.php?"
     url_list = []
     (from_page_number..to_page_number).each do |pagenumber|
       url = url_root+"p="+pagenumber.to_s+"&q="+query_keyword
-      url_list << URI::escape(url)
+      url_list << [URI::escape(url),project]
     end
-    puts "Download url_list:",url_list.to_s
+    # puts "Download url_list:",url_list.to_s
     return url_list
   end
 
@@ -79,7 +108,7 @@ class YunyunScraper
     puts "Starting Yunyun Crawler..."
 
     url_list.each do |eachurl|
-      save_path = save_root + eachurl.split("/")[-1].split("?")[-1] + post_fix+".html"
+      save_path = save_root + eachurl.split("/")[-1].split("?")[-1] + post_fix +".html"
       puts "\e[32m[Downloader] Processing " + eachurl + "...\e[0m"
       if File.exists?(save_path)
         puts "'"+save_path+"' already existed! Skip..."
@@ -186,7 +215,7 @@ class YunyunScraper
     postData.each do |post|
       puts post.to_s
       if !Post.exists?(:post_url=> post[0][:post_url])
-        post = Post.create(post)
+        Post.create(post)
         puts "\e[32mSaved!\e[0m"
         new_post_count +=1
       else
@@ -234,7 +263,7 @@ if __FILE__ == $0 # ruby yunyun.rb
   # to = 22 #[1,22]
   # keyword = "ios7.1"
 
-  post_fix = "_"+Time.now.to_i.to_s
+  # post_fix = "_"+Time.now.to_i.to_s
   save_root = "rawdata/"
   sleep_second = 0
   url_list = []
@@ -243,12 +272,12 @@ if __FILE__ == $0 # ruby yunyun.rb
     url_list += scraper.constructStartList(from,to,keyword)
   end
 
-  # while true do
-  #   if scraper.downloader( url_list , save_root, post_fix, sleep_second) # url, dir, post_fix, sleep_second
-  #     break
-  #   end
-  #   sleep(10)
-  # end
+  while true do
+    if scraper.downloader( url_list , save_root, "", sleep_second) # url, dir, post_fix, sleep_second
+      break
+    end
+    sleep(10)
+  end
 
   file_list = Dir.glob("rawdata/*")
 
